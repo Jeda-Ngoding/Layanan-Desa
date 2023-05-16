@@ -52,6 +52,14 @@
                             Dashboard
                         </a>
                         <div class="sb-sidenav-menu-heading">Master</div>
+                        <a class="nav-link" href="charts.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                            Accounts
+                        </a>
+                        <a class="nav-link" href="charts.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-address-book"></i></div>
+                            Accounts
+                        </a>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             Layouts
@@ -94,14 +102,10 @@
                                 </div>
                             </nav>
                         </div>
-                        <div class="sb-sidenav-menu-heading">Addons</div>
+                        <div class="sb-sidenav-menu-heading">Management</div>
                         <a class="nav-link" href="charts.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Charts
-                        </a>
-                        <a class="nav-link" href="tables.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Tables
+                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                            Accounts
                         </a>
                     </div>
                 </div>
