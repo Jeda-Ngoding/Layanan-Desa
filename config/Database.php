@@ -5,7 +5,7 @@ class Database
 
     private $hostname = "localhost";
     private $username = "root";
-    private $password = "password";
+    private $password = "";
     private $database = "layanan_desa";
     private $mysqli = "";
     public $sql;
@@ -57,7 +57,7 @@ class Database
             $sql = "SELECT $rows FROM $table";
         }
 
-        $result = $this->mysqli->query($sql);
+        $this->sql = $result = $this->mysqli->query($sql);
     }
 
     public function __destruct()
