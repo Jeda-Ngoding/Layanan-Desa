@@ -1,10 +1,11 @@
 ## List Task :
-- [ ] Mercury
-- [] Venus
-- [x] Earth (Orbit/Moon)
-- [x] Mars
-- [ ] Jupiter
-- [ ] Saturn
-- [ ] Uranus
-- [ ] Neptune
-- [ ] Comet Haley
+- [x] Login admin
+- [] Dashboard Admin
+- [] Data Penduduk
+- [x] Jenis Pengajuan
+- [] Data Pengajuan
+- [x] Data Akun
+- [] Form Pengajuan Penduduk (pengguna)
+- [] Halaman Utama Pengguna
+- [] Halaman cek status permohonan pengajuan 
+- [x] logout
