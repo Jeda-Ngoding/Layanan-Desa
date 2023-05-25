@@ -5,7 +5,7 @@
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
             Data Jenis Pengajuan
-            <a href="/layanan_desa/admin/jenis_pengajuan/create.php">Tambah Akun</a>
+            <a href="/layanan_desa/admin/jenis_pengajuan/create.php">Tambah Jenis Pengajuan</a>
         </div>
         <div class="card-body">
             <table id="datatablesSimple">

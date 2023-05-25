@@ -1,12 +1,12 @@
 <?php require('../layouts/header.php'); ?>
 
 <div class="container-fluid px-4 py-4">
-    <form action="/layanan_desa/action/admin/jenis_pengajuan/update.php" method="post">
-        <div class="card mt-4 mb-4">
+    <form action="/layanan_desa/action/admin/penduduk/update.php" method="post">
+        <div class="card">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Edit Jenis Pengajuan
-                <a href="/layanan_desa/admin/jenis_pengajuan">Kembali</a>
+                Edit Data Penduduk
+                <a href="/layanan_desa/admin/penduduk">Kembali</a>
             </div>
             <div class="card-body">
                 <?php 
@@ -15,7 +15,7 @@
                         $id = $_GET['id'];
 
                         $db = new database();
-                        $db->select("jenis_pengajuan","*","id='$id'");
+                        $db->select("penduduk","*","id='$id'");
                         $result = $db->sql;
 
                         $row = mysqli_fetch_assoc($result);

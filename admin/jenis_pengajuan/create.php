@@ -1,6 +1,6 @@
 <?php require('../layouts/header.php'); ?>
 
-<div class="container-fluid px-4">
+<div class="container-fluid px-4 py-4">
     <form action="/layanan_desa/action/admin/jenis_pengajuan/insert.php" method="post">
         <div class="card mt-4 mb-4">
             <div class="card-header">
