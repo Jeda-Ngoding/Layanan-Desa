@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,7 +10,29 @@
     <title>Login - SB Admin</title>
     <link href="assets/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <style>
+    .carousel-item {
+        height: 500px;
+    }
+    </style>
 </head>
-<body class="bg-primary">
-    
-<main>
+
+<body class="">
+
+    <main>
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <img width="50"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Logo_kabupaten_madiun.gif/800px-Logo_kabupaten_madiun.gif"
+                        alt="">
+                    <span class="fs-4"></span>
+                </a>
+
+                <ul class="nav nav-pills mt-2">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="/pengajuan.php" class="nav-link">Status Pengajuan</a></li>
+                    <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
+                </ul>
+            </header>
+        </div>

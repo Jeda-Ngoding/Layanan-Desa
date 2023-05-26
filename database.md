@@ -9,13 +9,14 @@
 
 ## Penduduk
 - id
+- no_kk
 - nik
 - nama
 - tempat_lahir
 - tanggal_lahir
 - jenis_kelamin
 - golongan_darah
-- dusun
+- alamat
 - rt
 - rw
 - kelurahan
