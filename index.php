@@ -64,7 +64,7 @@ include('layouts/header.php');
                 $result = $b->sql;
             ?>
             <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-            <div class="col-md-2 col-sm-3 py-2">
+            <div class="col-md-3 col-sm-2 py-2">
                 <a href="/layanan_desa/pengajuan/create.php?id=<?php echo $row['id']; ?>">
                     <div class="card">
                         <div class="card-body text-center">
