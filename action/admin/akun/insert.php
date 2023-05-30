@@ -9,7 +9,13 @@ if (isset($_POST['submit'])) {
     $updated_at = date("Y-m-d h:i:s");
 
     $db = new database();
-    $db->insert('akun',['nama'=>$nama,'username'=>$username,'password'=>$password,'created_at'=>$created_at,'updated_at'=>$updated_at]);
+    $db->insert('akun',[
+        'nama'=>$nama,
+        'username'=>$username,
+        'password'=>$password,
+        'created_at'=>$created_at,
+        'updated_at'=>$updated_at
+    ]);
 
     if ($db == true) {
         header('location:/layanan_desa/admin/akun');
