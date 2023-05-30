@@ -54,81 +54,27 @@ include('layouts/header.php');
         </div>
     </div>
 
-    <div class="py-4">
-        <div class="row">
+    <div class="py-4 mb-5">
+        <h4 class="mb-4">Layanan Pengajuan</h4>
+        <div class="row mb-5">
+            <?php 
+                include './config/database.php';
+                $b = new database();
+                $b->select("jenis_pengajuan","*");
+                $result = $b->sql;
+            ?>
+            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
             <div class="col-md-2 col-sm-3 py-2">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h3><i class="fas fa-file"></i></h3>
+                <a href="/layanan_desa/pengajuan/<?php echo $row['file']; ?>?id=<?php echo $row['id']; ?>">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h3><i class="fas fa-file"></i></h3>
+                            <p><?php echo $row['nama']; ?></p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-md-2 col-sm-3 py-2">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h3><i class="fas fa-file"></i></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 py-2">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h3><i class="fas fa-file"></i></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 py-2">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h3><i class="fas fa-file"></i></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 py-2">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h3><i class="fas fa-file"></i></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 py-2">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h3><i class="fas fa-file"></i></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 py-2">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h3><i class="fas fa-file"></i></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 py-2">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h3><i class="fas fa-file"></i></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 py-2">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h3><i class="fas fa-file"></i></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 py-2">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h3><i class="fas fa-file"></i></h3>
-                    </div>
-                </div>
-            </div>
-            
-            
-            
+            <?php } ?>
         </div>
     </div>
 </div>

@@ -44,7 +44,7 @@
 - id
 - id_penduduk
 - id_jenis_pengajuan
-- keterangan
+- data
 - status
 - created_at
 - updated_at
