@@ -60,6 +60,14 @@ class Database
         $this->sql = $result = $this->mysqli->query($sql);
     }
 
+
+    public function selectSuratPengajuan()
+    {
+        $sql = "SELECT sp.*, p.nama as nama_penduduk, jp.nama as nama_pengajuan FROM surat_pengajuan sp join penduduk p on p.id = sp.id_penduduk join jenis_pengajuan jp on jp.id = sp.id_jenis_pengajuan order by created_at desc";
+
+        $this->sql = $result = $this->mysqli->query($sql);
+    }
+
     public function __destruct()
     {
         $this->mysqli->close();

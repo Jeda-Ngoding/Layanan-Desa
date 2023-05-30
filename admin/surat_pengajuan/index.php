@@ -10,7 +10,7 @@
             <table id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Nama</th>
                         <th>Jenis Pengajuan</th>
                         <th>Tanggal</th>
                         <th>Status</th>
@@ -19,7 +19,7 @@
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Name</th>
+                        <th>Nama</th>
                         <th>Jenis Pengajuan</th>
                         <th>Tanggal</th>
                         <th>Status</th>
@@ -27,11 +27,18 @@
                     </tr>
                 </tfoot>
                 <tbody>
+                    <?php 
+                        include '../../config/database.php';
+                        $b = new Database();
+                        $b->selectSuratPengajuan();
+                        $result = $b->sql;
+                    ?>
+                    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                     <tr>
-                        <td>Andri</td>
-                        <td>Pengajuan Izin Acara</td>
-                        <td>23 Mei 2023</td>
-                        <td>Pending</td>
+                        <td><?php echo $row['nama_penduduk']; ?></td>
+                        <td><?php echo $row['nama_pengajuan']; ?></td>
+                        <td><div class="text-center"><?php echo date("D, d-M-Y H:m",strtotime($row['created_at'])); ?></div></td>
+                        <td><div class="text-center"><?php echo strtoupper($row['status']); ?></div></td>
                         <td>
                             <div class="text-center">
                                 <a href="detail.php?id=" class="btn btn-outline-secondary btn-sm">Detail</a>
@@ -39,6 +46,7 @@
                             </div>
                         </td>
                     </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

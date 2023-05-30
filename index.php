@@ -65,7 +65,7 @@ include('layouts/header.php');
             ?>
             <?php while ($row = mysqli_fetch_assoc($result)) { ?>
             <div class="col-md-2 col-sm-3 py-2">
-                <a href="/layanan_desa/pengajuan/<?php echo $row['file']; ?>?id=<?php echo $row['id']; ?>">
+                <a href="/layanan_desa/pengajuan/create.php?id=<?php echo $row['id']; ?>">
                     <div class="card">
                         <div class="card-body text-center">
                             <h3><i class="fas fa-file"></i></h3>
