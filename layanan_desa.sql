@@ -140,8 +140,9 @@ CREATE TABLE `surat_pengajuan` (
   `id` int(11) NOT NULL,
   `id_penduduk` bigint(20) NOT NULL,
   `id_jenis_pengajuan` bigint(20) NOT NULL,
-  `keterangan` longtext DEFAULT NULL,
+  `data` longtext DEFAULT NULL,
   `status` varchar(150) DEFAULT NULL,
+  `file` varchar(150) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
