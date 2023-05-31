@@ -13,6 +13,6 @@
     </div>
 </div>
 <div class="form-group mb-2">
-    <label for="register-form-name">Keterangan:</label>
-    <textarea class="form-control" name="keterangan" rows="10"></textarea>
+    <label for="register-form-name">Tujuan Pengajuan SKCK:</label>
+    <textarea class="form-control" name="tujuan_pengajuan_skck" rows="5"></textarea>
 </div>
