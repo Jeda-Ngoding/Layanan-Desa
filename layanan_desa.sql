@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2023 at 04:09 PM
+-- Generation Time: Jun 06, 2023 at 06:51 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -76,10 +76,11 @@ CREATE TABLE `jenis_pengajuan` (
 --
 
 INSERT INTO `jenis_pengajuan` (`id`, `nama`, `deskripsi`, `status`, `created_at`, `updated_at`, `file`) VALUES
-(1, 'Pembuatan SKCK', 'Cillum molestiae nos dsd', 'inactive', '2023-05-21 02:09:53', '2023-05-20 20:07:16', NULL),
-(2, 'Surat Keterangan Tidak Mampu', 'Atque sit voluptate', 'active', '2023-05-20 19:31:14', '2023-05-20 20:07:36', NULL),
-(3, 'Surat Kematian', 'Dignissimos cupidita', 'inactive', '2023-05-20 19:40:27', '2023-05-20 20:07:47', NULL),
-(4, 'Eos assumenda anim q', '', '', '2023-05-25 03:58:17', '2023-05-25 03:58:17', NULL);
+(1, 'Surat Keterangan Usaha', '-', 'active', '2023-05-30 02:08:19', '2023-05-30 02:08:19', 'form_sku.php'),
+(2, 'Surat Izin Keramaian', '-', 'active', '2023-05-30 02:08:37', '2023-05-30 02:08:37', 'form_sik.php'),
+(3, 'Surat Keterangan Tidak Mampu', '-', 'active', '2023-05-30 02:08:55', '2023-05-30 02:08:55', 'form_sktm.php'),
+(4, 'Surat SKCK', '-', 'active', '2023-05-30 02:09:21', '2023-05-30 02:09:21', 'form_skck.php'),
+(5, 'Surat Kematian', '-', 'active', '2023-05-30 02:10:35', '2023-05-30 02:10:35', 'form_sk.php');
 
 -- --------------------------------------------------------
 
@@ -142,10 +143,26 @@ CREATE TABLE `surat_pengajuan` (
   `id_jenis_pengajuan` bigint(20) NOT NULL,
   `data` longtext DEFAULT NULL,
   `status` varchar(150) DEFAULT NULL,
-  `file` varchar(150) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `surat_pengajuan`
+--
+
+INSERT INTO `surat_pengajuan` (`id`, `id_penduduk`, `id_jenis_pengajuan`, `data`, `status`, `created_at`, `updated_at`) VALUES
+(1, 2, 1, '{\"nama\":\"Doloremque exercitat\",\"nik\":\"23\",\"keterangan\":\"Corrupti ipsa repr\",\"submit\":\"Submit\"}', 'pending', '2023-05-30 01:22:40', '2023-05-30 01:22:40'),
+(2, 4, 1, '{\"nama\":\"Rerum unde maiores i\",\"nik\":\"23\",\"keterangan\":\"Qui delectus quo la\",\"submit\":\"Submit\",\"penduduk\":{\"id\":\"2\",\"nik\":\"23\",\"no_kk\":\"100\",\"nama\":\"Aut quos et consecte\",\"tempat_lahir\":\"Dolorem ipsum conseq\",\"tanggal_lahir\":\"1992-06-27\",\"jenis_kelamin\":\"Perempuan\",\"golongan_darah\":\"Dolor\",\"alamat\":\"Non harum non dolore\",\"rt\":\"21\",\"rw\":\"44\",\"kelurahan\":\"In ut in illum face\",\"kecamatan\":\"Quae sapiente quisqu\",\"kabupaten\":\"Id aliquid tempore\",\"provinsi\":\"28\",\"kode_pos\":\"60\",\"agama\":\"Vitae natus doloremq\",\"status_perkawinan\":\"Consequat Voluptate\",\"pekerjaan\":\"Eligendi sed deserun\",\"kewarganegaraan\":\"Recusandae Dicta no\",\"created_at\":\"2023-05-25 11:13:31\",\"updated_at\":\"2023-05-25 11:13:31\"}}', 'pending', '2023-05-30 01:24:39', '2023-05-30 01:24:39'),
+(3, 2, 1, '{\"id_jenis_pengajuan\":\"1\",\"nama\":\"Cum molestias est to\",\"nik\":\"23\",\"keterangan\":\"Lorem sit veniam nu\",\"submit\":\"Submit\",\"penduduk\":{\"id\":\"2\",\"nik\":\"23\",\"no_kk\":\"100\",\"nama\":\"Aut quos et consecte\",\"tempat_lahir\":\"Dolorem ipsum conseq\",\"tanggal_lahir\":\"1992-06-27\",\"jenis_kelamin\":\"Perempuan\",\"golongan_darah\":\"Dolor\",\"alamat\":\"Non harum non dolore\",\"rt\":\"21\",\"rw\":\"44\",\"kelurahan\":\"In ut in illum face\",\"kecamatan\":\"Quae sapiente quisqu\",\"kabupaten\":\"Id aliquid tempore\",\"provinsi\":\"28\",\"kode_pos\":\"60\",\"agama\":\"Vitae natus doloremq\",\"status_perkawinan\":\"Consequat Voluptate\",\"pekerjaan\":\"Eligendi sed deserun\",\"kewarganegaraan\":\"Recusandae Dicta no\",\"created_at\":\"2023-05-25 11:13:31\",\"updated_at\":\"2023-05-25 11:13:31\"},\"jenis_pengajuan\":{\"id\":\"1\",\"nama\":\"Pembuatan SKCK\",\"deskripsi\":\"Cillum molestiae nos dsd\",\"status\":\"inactive\",\"created_at\":\"2023-05-21 09:09:53\",\"updated_at\":\"2023-05-21 03:07:16\",\"file\":\"skck.php\"}}', 'pending', '2023-05-30 01:29:28', '2023-05-30 01:29:28'),
+(4, 2, 1, '{\"id_jenis_pengajuan\":\"1\",\"nama\":\"Sapiente blanditiis \",\"nik\":\"23\",\"keterangan\":\"Ea dolorem quisquam \",\"submit\":\"Submit\",\"penduduk\":{\"id\":\"2\",\"nik\":\"23\",\"no_kk\":\"100\",\"nama\":\"Aut quos et consecte\",\"tempat_lahir\":\"Dolorem ipsum conseq\",\"tanggal_lahir\":\"1992-06-27\",\"jenis_kelamin\":\"Perempuan\",\"golongan_darah\":\"Dolor\",\"alamat\":\"Non harum non dolore\",\"rt\":\"21\",\"rw\":\"44\",\"kelurahan\":\"In ut in illum face\",\"kecamatan\":\"Quae sapiente quisqu\",\"kabupaten\":\"Id aliquid tempore\",\"provinsi\":\"28\",\"kode_pos\":\"60\",\"agama\":\"Vitae natus doloremq\",\"status_perkawinan\":\"Consequat Voluptate\",\"pekerjaan\":\"Eligendi sed deserun\",\"kewarganegaraan\":\"Recusandae Dicta no\",\"created_at\":\"2023-05-25 11:13:31\",\"updated_at\":\"2023-05-25 11:13:31\"},\"jenis_pengajuan\":{\"id\":\"1\",\"nama\":\"Pembuatan SKCK\",\"deskripsi\":\"Cillum molestiae nos dsd\",\"status\":\"inactive\",\"created_at\":\"2023-05-21 09:09:53\",\"updated_at\":\"2023-05-21 03:07:16\",\"file\":\"skck.php\"}}', 'pending', '2023-05-30 01:32:21', '2023-05-30 01:32:21'),
+(5, 2, 2, '{\"id_jenis_pengajuan\":\"2\",\"nama\":\"Sed id a voluptatem \",\"nik\":\"23\",\"keterangan\":\"Soluta est et asper\",\"submit\":\"Submit\",\"penduduk\":{\"id\":\"2\",\"nik\":\"23\",\"no_kk\":\"100\",\"nama\":\"Aut quos et consecte\",\"tempat_lahir\":\"Dolorem ipsum conseq\",\"tanggal_lahir\":\"1992-06-27\",\"jenis_kelamin\":\"Perempuan\",\"golongan_darah\":\"Dolor\",\"alamat\":\"Non harum non dolore\",\"rt\":\"21\",\"rw\":\"44\",\"kelurahan\":\"In ut in illum face\",\"kecamatan\":\"Quae sapiente quisqu\",\"kabupaten\":\"Id aliquid tempore\",\"provinsi\":\"28\",\"kode_pos\":\"60\",\"agama\":\"Vitae natus doloremq\",\"status_perkawinan\":\"Consequat Voluptate\",\"pekerjaan\":\"Eligendi sed deserun\",\"kewarganegaraan\":\"Recusandae Dicta no\",\"created_at\":\"2023-05-25 11:13:31\",\"updated_at\":\"2023-05-25 11:13:31\"},\"jenis_pengajuan\":{\"id\":\"2\",\"nama\":\"Surat Keterangan Tidak Mampu\",\"deskripsi\":\"Atque sit voluptate\",\"status\":\"active\",\"created_at\":\"2023-05-21 02:31:14\",\"updated_at\":\"2023-05-21 03:07:36\",\"file\":\"sktm.php\"}}', 'pending', '2023-05-30 01:32:40', '2023-05-30 01:32:40'),
+(6, 2, 2, '{\"id_jenis_pengajuan\":\"2\",\"nama\":\"Fugiat sapiente aute\",\"nik\":\"23\",\"tanggal_acara\":\"2009-02-08\",\"keterangan\":\"Voluptatem ab et ex\",\"submit\":\"Submit\",\"penduduk\":{\"id\":\"2\",\"nik\":\"23\",\"no_kk\":\"100\",\"nama\":\"Aut quos et consecte\",\"tempat_lahir\":\"Dolorem ipsum conseq\",\"tanggal_lahir\":\"1992-06-27\",\"jenis_kelamin\":\"Perempuan\",\"golongan_darah\":\"Dolor\",\"alamat\":\"Non harum non dolore\",\"rt\":\"21\",\"rw\":\"44\",\"kelurahan\":\"In ut in illum face\",\"kecamatan\":\"Quae sapiente quisqu\",\"kabupaten\":\"Id aliquid tempore\",\"provinsi\":\"28\",\"kode_pos\":\"60\",\"agama\":\"Vitae natus doloremq\",\"status_perkawinan\":\"Consequat Voluptate\",\"pekerjaan\":\"Eligendi sed deserun\",\"kewarganegaraan\":\"Recusandae Dicta no\",\"created_at\":\"2023-05-25 11:13:31\",\"updated_at\":\"2023-05-25 11:13:31\"},\"jenis_pengajuan\":{\"id\":\"2\",\"nama\":\"Surat Izin Keramaian\",\"deskripsi\":\"-\",\"status\":\"active\",\"created_at\":\"2023-05-30 09:08:37\",\"updated_at\":\"2023-05-30 09:08:37\",\"file\":\"form_sik.php\"}}', 'pending', '2023-05-30 02:15:34', '2023-05-30 02:15:34'),
+(7, 2, 2, '{\"id_jenis_pengajuan\":\"2\",\"nama\":\"Ratione dolor aut an\",\"nik\":\"23\",\"tanggal_acara\":\"1990-05-25T16:47\",\"keterangan\":\"Praesentium cupidita\",\"submit\":\"Submit\",\"penduduk\":{\"id\":\"2\",\"nik\":\"23\",\"no_kk\":\"100\",\"nama\":\"Aut quos et consecte\",\"tempat_lahir\":\"Dolorem ipsum conseq\",\"tanggal_lahir\":\"1992-06-27\",\"jenis_kelamin\":\"Perempuan\",\"golongan_darah\":\"Dolor\",\"alamat\":\"Non harum non dolore\",\"rt\":\"21\",\"rw\":\"44\",\"kelurahan\":\"In ut in illum face\",\"kecamatan\":\"Quae sapiente quisqu\",\"kabupaten\":\"Id aliquid tempore\",\"provinsi\":\"28\",\"kode_pos\":\"60\",\"agama\":\"Vitae natus doloremq\",\"status_perkawinan\":\"Consequat Voluptate\",\"pekerjaan\":\"Eligendi sed deserun\",\"kewarganegaraan\":\"Recusandae Dicta no\",\"created_at\":\"2023-05-25 11:13:31\",\"updated_at\":\"2023-05-25 11:13:31\"},\"jenis_pengajuan\":{\"id\":\"2\",\"nama\":\"Surat Izin Keramaian\",\"deskripsi\":\"-\",\"status\":\"active\",\"created_at\":\"2023-05-30 09:08:37\",\"updated_at\":\"2023-05-30 09:08:37\",\"file\":\"form_sik.php\"}}', 'pending', '2023-05-30 02:16:52', '2023-05-30 02:16:52'),
+(8, 2, 5, '{\"id_jenis_pengajuan\":\"5\",\"nama\":\"Est illum explicab\",\"nik\":\"23\",\"tanggal_kematian\":\"2016-11-11T01:43\",\"tempat_kematian\":\"Cupiditate in fuga \",\"sebab_kematian\":\"Aut et doloribus asp\",\"submit\":\"Submit\",\"penduduk\":{\"id\":\"2\",\"nik\":\"23\",\"no_kk\":\"100\",\"nama\":\"Aut quos et consecte\",\"tempat_lahir\":\"Dolorem ipsum conseq\",\"tanggal_lahir\":\"1992-06-27\",\"jenis_kelamin\":\"Perempuan\",\"golongan_darah\":\"Dolor\",\"alamat\":\"Non harum non dolore\",\"rt\":\"21\",\"rw\":\"44\",\"kelurahan\":\"In ut in illum face\",\"kecamatan\":\"Quae sapiente quisqu\",\"kabupaten\":\"Id aliquid tempore\",\"provinsi\":\"28\",\"kode_pos\":\"60\",\"agama\":\"Vitae natus doloremq\",\"status_perkawinan\":\"Consequat Voluptate\",\"pekerjaan\":\"Eligendi sed deserun\",\"kewarganegaraan\":\"Recusandae Dicta no\",\"created_at\":\"2023-05-25 11:13:31\",\"updated_at\":\"2023-05-25 11:13:31\"},\"jenis_pengajuan\":{\"id\":\"5\",\"nama\":\"Surat Kematian\",\"deskripsi\":\"-\",\"status\":\"active\",\"created_at\":\"2023-05-30 09:10:35\",\"updated_at\":\"2023-05-30 09:10:35\",\"file\":\"form_sk.php\"}}', 'pending', '2023-05-30 19:24:08', '2023-05-30 19:24:08'),
+(9, 0, 4, '{\"id_jenis_pengajuan\":\"4\",\"nama\":\"Eius rerum proident\",\"nik\":\"Officiis nihil aut v\",\"tujuan_pengajuan_skck\":\"Tempore totam maxim\",\"submit\":\"Submit\",\"penduduk\":null,\"jenis_pengajuan\":{\"id\":\"4\",\"nama\":\"Surat SKCK\",\"deskripsi\":\"-\",\"status\":\"active\",\"created_at\":\"2023-05-30 09:09:21\",\"updated_at\":\"2023-05-30 09:09:21\",\"file\":\"form_skck.php\"}}', 'pending', '2023-05-30 19:29:27', '2023-05-30 19:29:27'),
+(10, 2, 3, '{\"id_jenis_pengajuan\":\"3\",\"nama\":\"Dolore provident qu\",\"nik\":\"23\",\"tujuan_pengajuan\":\"Ipsam dolor corrupti\",\"submit\":\"Submit\",\"penduduk\":{\"id\":\"2\",\"nik\":\"23\",\"no_kk\":\"100\",\"nama\":\"Aut quos et consecte\",\"tempat_lahir\":\"Dolorem ipsum conseq\",\"tanggal_lahir\":\"1992-06-27\",\"jenis_kelamin\":\"Perempuan\",\"golongan_darah\":\"Dolor\",\"alamat\":\"Non harum non dolore\",\"rt\":\"21\",\"rw\":\"44\",\"kelurahan\":\"In ut in illum face\",\"kecamatan\":\"Quae sapiente quisqu\",\"kabupaten\":\"Id aliquid tempore\",\"provinsi\":\"28\",\"kode_pos\":\"60\",\"agama\":\"Vitae natus doloremq\",\"status_perkawinan\":\"Consequat Voluptate\",\"pekerjaan\":\"Eligendi sed deserun\",\"kewarganegaraan\":\"Recusandae Dicta no\",\"created_at\":\"2023-05-25 11:13:31\",\"updated_at\":\"2023-05-25 11:13:31\"},\"jenis_pengajuan\":{\"id\":\"3\",\"nama\":\"Surat Keterangan Tidak Mampu\",\"deskripsi\":\"-\",\"status\":\"active\",\"created_at\":\"2023-05-30 09:08:55\",\"updated_at\":\"2023-05-30 09:08:55\",\"file\":\"form_sktm.php\"}}', 'pending', '2023-05-30 19:37:30', '2023-05-30 19:37:30'),
+(11, 2, 4, '{\"id_jenis_pengajuan\":\"4\",\"nama\":\"Sakrep\",\"nik\":\"23\",\"tujuan_pengajuan_skck\":\"Melamar Kerja\",\"submit\":\"Submit\",\"penduduk\":{\"id\":\"2\",\"nik\":\"23\",\"no_kk\":\"100\",\"nama\":\"Aut quos et consecte\",\"tempat_lahir\":\"Dolorem ipsum conseq\",\"tanggal_lahir\":\"1992-06-27\",\"jenis_kelamin\":\"Perempuan\",\"golongan_darah\":\"Dolor\",\"alamat\":\"Non harum non dolore\",\"rt\":\"21\",\"rw\":\"44\",\"kelurahan\":\"In ut in illum face\",\"kecamatan\":\"Quae sapiente quisqu\",\"kabupaten\":\"Id aliquid tempore\",\"provinsi\":\"28\",\"kode_pos\":\"60\",\"agama\":\"Vitae natus doloremq\",\"status_perkawinan\":\"Consequat Voluptate\",\"pekerjaan\":\"Eligendi sed deserun\",\"kewarganegaraan\":\"Recusandae Dicta no\",\"created_at\":\"2023-05-25 11:13:31\",\"updated_at\":\"2023-05-25 11:13:31\"},\"jenis_pengajuan\":{\"id\":\"4\",\"nama\":\"Surat SKCK\",\"deskripsi\":\"-\",\"status\":\"active\",\"created_at\":\"2023-05-30 09:09:21\",\"updated_at\":\"2023-05-30 09:09:21\",\"file\":\"form_skck.php\"}}', 'pending', '2023-05-30 20:01:32', '2023-05-30 20:01:32');
 
 --
 -- Indexes for dumped tables
@@ -189,7 +206,7 @@ ALTER TABLE `akun`
 -- AUTO_INCREMENT for table `jenis_pengajuan`
 --
 ALTER TABLE `jenis_pengajuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `penduduk`
@@ -201,7 +218,7 @@ ALTER TABLE `penduduk`
 -- AUTO_INCREMENT for table `surat_pengajuan`
 --
 ALTER TABLE `surat_pengajuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
