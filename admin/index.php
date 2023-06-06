@@ -64,42 +64,43 @@
             Data Surat Keluar
         </div>
         <div class="card-body">
-            <table id="datatablesSimple">
+        <table id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>Nama</th>
+                        <th>Jenis Pengajuan</th>
+                        <th>Tanggal</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>Nama</th>
+                        <th>Jenis Pengajuan</th>
+                        <th>Tanggal</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
                     </tr>
                 </tfoot>
                 <tbody>
                     <?php 
                         include '../config/database.php';
-                        $b = new database();
-                        $b->select("surat_pengajuan","*");
+                        $b = new Database();
+                        $b->selectSuratPengajuan("sp.status='done'");
                         $result = $b->sql;
                     ?>
                     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                     <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
+                        <td><?php echo $row['nama_penduduk']; ?></td>
+                        <td><?php echo $row['nama_pengajuan']; ?></td>
+                        <td><div class="text-center"><?php echo date("D, d-M-Y H:m",strtotime($row['created_at'])); ?></div></td>
+                        <td><div class="text-center"><?php echo strtoupper($row['status']); ?></div></td>
+                        <td>
+                            <div class="text-center">
+                                <a href="detail.php?id=" class="btn btn-outline-secondary btn-sm">Detail</a>
+                            </div>
+                        </td>
                     </tr>
                     <?php } ?>
                 </tbody>

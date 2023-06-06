@@ -61,9 +61,13 @@ class Database
     }
 
 
-    public function selectSuratPengajuan()
+    public function selectSuratPengajuan($where = null)
     {
-        $sql = "SELECT sp.*, p.nama as nama_penduduk, jp.nama as nama_pengajuan FROM surat_pengajuan sp join penduduk p on p.id = sp.id_penduduk join jenis_pengajuan jp on jp.id = sp.id_jenis_pengajuan order by created_at desc";
+        if ($where != null) {
+            $sql = "SELECT sp.*, p.nama as nama_penduduk, jp.nama as nama_pengajuan FROM surat_pengajuan sp join penduduk p on p.id = sp.id_penduduk join jenis_pengajuan jp on jp.id = sp.id_jenis_pengajuan WHERE $where order by created_at desc";
+        } else {
+            $sql = "SELECT sp.*, p.nama as nama_penduduk, jp.nama as nama_pengajuan FROM surat_pengajuan sp join penduduk p on p.id = sp.id_penduduk join jenis_pengajuan jp on jp.id = sp.id_jenis_pengajuan order by created_at desc";
+        }
 
         $this->sql = $result = $this->mysqli->query($sql);
     }
