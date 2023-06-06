@@ -86,8 +86,8 @@
                 <tbody>
                     <?php 
                         include '../config/database.php';
-                        $b = new Database();
-                        $b->selectSuratPengajuan("sp.status='done'");
+                        $db = new Database();
+                        $db->selectSuratPengajuan("sp.status='done'");
                         $result = $b->sql;
                     ?>
                     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
