@@ -5,7 +5,7 @@
 - [x] Jenis Pengajuan
 - [] Data Pengajuan
 - [x] Data Akun
-- [] Form Pengajuan Penduduk (pengguna)
-- [] Halaman Utama Pengguna
+- [x] Form Pengajuan Penduduk (pengguna)
+- [x] Halaman Utama Pengguna
 - [] Halaman cek status permohonan pengajuan 
 - [x] logout

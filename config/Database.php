@@ -5,7 +5,7 @@ class Database
 
     private $hostname = "localhost";
     private $username = "root";
-    private $password = "";
+    private $password = "root";
     private $database = "layanan_desa";
     private $mysqli = "";
     public $sql;

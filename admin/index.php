@@ -87,12 +87,12 @@
                 </tfoot>
                 <tbody>
                     <?php 
-                        // include '../../config/database.php';
-                        // $b = new database();
-                        // $b->select("surat_pengajuan","*");
-                        // $result = $b->sql;
+                        include '../config/database.php';
+                        $b = new database();
+                        $b->select("surat_pengajuan","*");
+                        $result = $b->sql;
                     ?>
-                    <?php //while ($row = mysqli_fetch_assoc($result)) { ?>
+                    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                     <tr>
                         <td>Tiger Nixon</td>
                         <td>System Architect</td>
@@ -101,7 +101,7 @@
                         <td>2011/04/25</td>
                         <td>$320,800</td>
                     </tr>
-                    <?php //} ?>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
