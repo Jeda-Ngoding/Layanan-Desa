@@ -1,4 +1,8 @@
-<?php require('layouts/header.php'); ?>
+<?php 
+require('layouts/header.php');
+include '../config/database.php';
+$db = new Database();
+?>
 
 <div class="container-fluid px-4 py-4">
     <div class="row">
@@ -85,12 +89,10 @@
                 </tfoot>
                 <tbody>
                     <?php 
-                        include '../config/database.php';
-                        $db = new Database();
                         $db->selectSuratPengajuan("sp.status='done'");
-                        $result = $b->sql;
+                        $suratKeluar = $db->sql;
                     ?>
-                    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                    <?php while ($row = mysqli_fetch_assoc($suratKeluar)) { ?>
                     <tr>
                         <td><?php echo $row['nama_penduduk']; ?></td>
                         <td><?php echo $row['nama_pengajuan']; ?></td>

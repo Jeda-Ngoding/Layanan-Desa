@@ -1,32 +1,40 @@
-<?php 
+<?php
 include('layouts/header.php');
+include './config/database.php';
+$db = new Database();
 ?>
 
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group mb-2">
-                        <label for="register-form-name">NIK:</label>
-                        <input type="text" name="nama" class="form-control" required>
+            <form action="" method="get">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group mb-2">
+                            <label for="register-form-name">NIK:</label>
+                            <input type="number" name="nik" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group mb-2">
+                            <label for="register-form-name">Jenis Pengajuan:</label>
+                            <select name="jenis_pengajuan" class="form-select">
+                                <option value="">Semua</option>
+                                <?php
+                                $db->select("jenis_pengajuan", "*");
+                                $jenis_pengajuan = $db->sql;
+                                ?>
+                                <?php while ($row = mysqli_fetch_assoc($jenis_pengajuan)) { ?>
+                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['nama']; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <input class="btn btn-primary mt-4 w-100" type="submit" value="Submit">
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="form-group mb-2">
-                        <label for="register-form-name">Jenis Pengajuan:</label>
-                        <select name="" class="form-select">
-                            <option value="">Semua</option>
-                            <option value="">SKCK</option>
-                            <option value="">Surat Izin Usaha</option>
-                            <option value="">Surat Keterangan Tidak Mampu</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <input class="btn btn-primary mt-4" type="button" value="Submit">
-                </div>
-            </div>
+            </form>
         </div>
     </div>
     <hr>
@@ -43,25 +51,55 @@ include('layouts/header.php');
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
-                    include './config/database.php';
-                    $b = new Database();
-                    $b->selectSuratPengajuan();
-                    $result = $b->sql;
-                ?>
-                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                        <tr>
-                            <td><?php echo $row['nama_penduduk']; ?></td>
-                            <td><?php echo $row['nama_pengajuan']; ?></td>
-                            <td>
+                        <?php
+                        $id_jenis_pengajuan = $_GET['jenis_pengajuan'];
+                        $nik = $_GET['nik'];
+                        $db->select("penduduk", "*", "nik='$nik'");
+                        $query_penduduk = $db->sql;
+                        $penduduk = mysqli_fetch_assoc($query_penduduk);
+                        $id_penduduk = $penduduk['id'];
+                        if(!empty($id_jenis_pengajuan)){
+                            $db->selectSuratPengajuan("sp.id_penduduk='$id_penduduk'AND sp.id_jenis_pengajuan='$id_jenis_pengajuan'");
+                        }else{
+                            $db->selectSuratPengajuan("sp.id_penduduk='$id_penduduk'");
+                        }
+                        
+                        $surat_pengajuan = $db->sql;
+                        ?>
+                        <?php
+
+                        $row = mysqli_fetch_assoc($surat_pengajuan);
+                        
+                        if(count($row) > 0){
+
+                            while ($row = mysqli_fetch_assoc($surat_pengajuan)) { ?>
+                                <tr>
+                                    <td><?php echo $row['nama_penduduk']; ?></td>
+                                    <td><?php echo $row['nama_pengajuan']; ?></td>
+                                    <td>
+                                        <div class="text-center">
+                                            <?php echo date("D, d-M-Y H:m", strtotime($row['created_at'])); ?></div>
+                                    </td>
+                                    <td>
+                                        <div class="text-center"><?php echo strtoupper($row['status']); ?></div>
+                                    </td>
+                                </tr>
+
+                            <?php }
+
+                        }else{
+                            ?>
+                            <tr>
+                            <td colspan="4">
                                 <div class="text-center">
-                                    <?php echo date("D, d-M-Y H:m",strtotime($row['created_at'])); ?></div>
+                                    Data tidak tersedia !
+                                </div>
                             </td>
-                            <td>
-                                <div class="text-center"><?php echo strtoupper($row['status']); ?></div>
-                            </td>
-                        </tr>
-                        <?php } ?>
+                            </tr>
+                        <?php
+                        }
+
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -69,6 +107,6 @@ include('layouts/header.php');
     </div>
 </div>
 
-<?php 
+<?php
 include('layouts/footer.php');
 ?>

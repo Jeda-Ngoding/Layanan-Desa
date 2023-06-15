@@ -7,5 +7,5 @@
 - [x] Data Akun
 - [x] Form Pengajuan Penduduk (pengguna)
 - [x] Halaman Utama Pengguna
-- [] Halaman cek status permohonan pengajuan 
+- [x] Halaman cek status permohonan pengajuan 
 - [x] logout
