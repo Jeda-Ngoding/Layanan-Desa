@@ -13,6 +13,7 @@ class Database
 
     function __construct()
     {
+        date_default_timezone_set('Asia/Jakarta');
         $this->mysqli = new mysqli($this->hostname, $this->username, $this->password, $this->database);
     }
 
