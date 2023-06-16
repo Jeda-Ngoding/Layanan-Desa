@@ -39,7 +39,6 @@
                         <td><?php echo $row['status']; ?></td>
                         <td>
                             <div class="text-center">
-                                <a href="detail.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-secondary btn-sm">Detail</a>
                                 <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-warning btn-sm">Edit</a>
                             </div>
                         </td>

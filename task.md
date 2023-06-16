@@ -3,7 +3,7 @@
 - [] Dashboard Admin
 - [x] Data Penduduk
 - [x] Jenis Pengajuan
-- [] Data Pengajuan
+- [x] Data Pengajuan
 - [x] Data Akun
 - [x] Form Pengajuan Penduduk (pengguna)
 - [x] Halaman Utama Pengguna

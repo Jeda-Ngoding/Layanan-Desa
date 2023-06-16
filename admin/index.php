@@ -41,8 +41,6 @@ include '../config/database.php';
                         // total surat pengajuan minggu ini
                         $start_date_weekly = date("Y-m-d 00:00:00", strtotime("this week monday"));
                         $end_date_weekly = date("Y-m-d 23:59:59", strtotime("last sunday"));
-                        echo $start_date_weekly;
-                        echo $end_date_weekly;
                         $db->select("surat_pengajuan","*","created_at between '$start_date_weekly' and  '$end_date_weekly'");
                         $query_surat_pengajuan_weekly  = $db->sql;
                         $total_surat_pengajuan_weekly = count(mysqli_fetch_assoc($query_surat_pengajuan_weekly));

@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-6">
         <div class="form-group mb-2">
-            <label for="register-form-name">Nama:</label>
+            <label for="register-form-name">Nama Almarhum:</label>
             <input type="text" name="nama" class="form-control" required>
         </div>
     </div>

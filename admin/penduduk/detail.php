@@ -7,19 +7,78 @@ $db = new database();
 $db->select("penduduk","*","id='$id'");
 $result = $db->sql;
 
-$row = mysqli_fetch_assoc($result);
+$penduduk = mysqli_fetch_assoc($result);
 ?>
 
 <div class="container-fluid px-4 py-4">
-<table>
-    <tbody>
-        <tr>
-            <td>NIK</td>
-            <td>:</td>
-            <td><?php if(isset($row)) { echo $row['nik']; } ?></td>
-        </tr>
-    </tbody>
-</table>
+    <form action="">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                    Detail Penduduk
+                    <a href="/layanan_desa/admin/penduduk">Kembali</a>
+            </div>
+            <div class="card-body">
+
+                <div class="p-5">
+                    <h5>Data Penduduk</h5>
+                    <table class="table table-sm">
+                        <tbody>
+                            <tr>
+                                <td>NIK</td>
+                                <td>:&nbsp;<?php echo $penduduk['nik']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Nama</td>
+                                <td>:&nbsp;<?php echo $penduduk['nama']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Tempat, Tanggal Lahir</td>
+                                <td>:&nbsp;<?php echo $penduduk['tempat_lahir'].",".date('d-m-Y',strtotime($penduduk['tanggal_lahir'])); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Jenis Kelamin</td>
+                                <td>:&nbsp;<?php echo $penduduk['jenis_kelamin']; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gol.Darah : <?php echo $penduduk['golongan_darah']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Alamat</td>
+                                <td>:&nbsp;<?php echo $penduduk['alamat']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RT/RW</td>
+                                <td>:&nbsp;<?php echo $penduduk['rt']."/".$penduduk['rw']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kel/Desa</td>
+                                <td>:&nbsp;<?php echo $penduduk['kelurahan']; ?></td>
+                            </tr>
+                            <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kecamatan</td>
+                                <td>:&nbsp;<?php echo $penduduk['kecamatan']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Status Perkawinan</td>
+                                <td>:&nbsp;<?php echo $penduduk['status_perkawinan']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Pekerjaan</td>
+                                <td>:&nbsp;<?php echo $penduduk['pekerjaan']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Kewarganeraan</td>
+                                <td>:&nbsp;<?php echo $penduduk['kewarganegaraan']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Berlaku Hingga</td>
+                                <td>:&nbsp;<?php echo $penduduk['status_perkawinan']; ?></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 
 <?php require('../layouts/footer.php'); ?>
