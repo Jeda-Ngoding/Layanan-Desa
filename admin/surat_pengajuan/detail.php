@@ -1,8 +1,7 @@
 <?php require('../layouts/header.php'); ?>
 
 <div class="container-fluid px-4 py-4">
-    <form action="">
-        <div class="card">
+<div class="card">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
                     Detail Surat Pengajuan
@@ -143,10 +142,10 @@
             </div>
             <div class="card-footer">
                     <input type="reset" class="btn btn-warning" name="reset" value="Batal" />
-                    <input type="submit" class="btn btn-primary" name="submit" value="Proses" />
+                    <!-- <input type="submit" class="btn btn-primary" name="submit" value="Proses" /> -->
+                    <a href="proses.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Proses</a>
                 </div>
         </div>
-    </form>
 </div>
 
 <?php require('../layouts/footer.php'); ?>
