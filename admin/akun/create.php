@@ -1,12 +1,12 @@
 <?php require('../layouts/header.php'); ?>
 
 <div class="container-fluid px-4 py-4">
-    <form action="/layanan_desa/action/admin/jenis_pengajuan/insert.php" method="post">
+    <form action="/layanan_desa/action/admin/akun/insert.php" method="post">
         <div class="card mt-4 mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Buat Jenis Pengajuan
-                <a href="/layanan_desa/admin/jenis_pengajuan">Kembali</a>
+                Buat Akun Baru
+                <a href="/layanan_desa/admin/akun">Kembali</a>
             </div>
             <div class="card-body">
                 <?php include 'form.php'; ?>

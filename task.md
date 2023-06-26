@@ -1,9 +1,11 @@
 ## List Task :
 - [x] Login admin
-- [] Dashboard Admin
+- [x] Dashboard Admin
 - [x] Data Penduduk
 - [x] Jenis Pengajuan
 - [x] Data Pengajuan
+    - [x] Detail pengajuan
+    - [] Proses Pengajuan
 - [x] Data Akun
 - [x] Form Pengajuan Penduduk (pengguna)
 - [x] Halaman Utama Pengguna

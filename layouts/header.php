@@ -24,7 +24,7 @@
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
                 <a href="/layanan_desa" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                     <img width="50"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Logo_kabupaten_madiun.gif/800px-Logo_kabupaten_madiun.gif"
+                        src="/layanan_desa/assets/logo_kabupaten_madiun.gif"
                         alt="">
                     <span class="fs-4"></span>
                 </a>

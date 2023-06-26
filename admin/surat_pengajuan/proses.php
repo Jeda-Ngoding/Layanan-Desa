@@ -30,193 +30,143 @@ $jenis_pengajuan = $data['jenis_pengajuan'];
     </style>
 </head>
 
-<body class="">
+<body class="" onload="window.print()">
 
     <main>
         <div class="container-fluid px-4 py-4">
-            <div class="w-75 m-auto">
+            <div class="m-auto">
                 <div class="card">
                     <div class="card-body">
+                        <table class="table table-bordered table-sm">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" class="text-center">
+                                        <div class="text-center">
+                                            <img width="125" src="/layanan_desa/assets/logo_kabupaten_madiun.gif" alt="">
+                                        </div>
+                                    </td>
+                                    <td colspan="2" class="text-center">
+                                        <h5>PEMERINTAH KABUPATEN MADIUN <br> KECAMATAN WUNGU <br> DESA NGLANDUK</h5>
+                                        <p>Jalan Tanjung Anom Nomer 14 Kode Pos 63181</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="text-center"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="text-center">
+                                        <h5><?php echo strtoupper($jenis_pengajuan['nama']); ?></h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="text-center">Nomor : </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">Yang bertanda tangan dibawah ini :</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Nama</td>
+                                    <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Jabatan</td>
+                                    <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">dengan ini menerangkan bahwa :</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Nama</td>
+                                    <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td><?php echo $penduduk['nama']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Jenis Kelamin</td>
+                                    <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td><?php echo $penduduk['jenis_kelamin']; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gol.Darah : <?php echo $penduduk['golongan_darah']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Tempat, Tanggal Lahir</td>
+                                    <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td><?php echo $penduduk['tempat_lahir'] . "," . date('d-m-Y', strtotime($penduduk['tanggal_lahir'])); ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d&nbsp;&nbsp;&nbsp;</td>
+                                    <td>NIK</td>
+                                    <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td><?php echo $penduduk['nik']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Agama</td>
+                                    <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td><?php echo $penduduk['agama']; ?></td>
+                                </tr>
 
-                        <div class="p-5">
-                            <table class="table table-bordered table-sm">
-                                <tbody>
-                                    <tr>
-                                        <td colspan="4" class="text-center">
-                                            <h4>Surat Keterangan</h4>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4" class="text-center">Nomor : </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4">Yang bertanda tangan dibawah ini :</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">a</td>
-                                        <td>Nama</td>
-                                        <td>:</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">b</td>
-                                        <td>Jabatan</td>
-                                        <td>:</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4">dengan ini menerangkan bahwa :</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">a</td>
-                                        <td>Nama</td>
-                                        <td>:</td>
-                                        <td><?php echo $penduduk['nama']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">b</td>
-                                        <td>Jenis Kelamin</td>
-                                        <td>:</td>
-                                        <td><?php echo $penduduk['jenis_kelamin']; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gol.Darah : <?php echo $penduduk['golongan_darah']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">c</td>
-                                        <td>Tempat, Tanggal Lahir</td>
-                                        <td>:</td>
-                                        <td><?php echo $penduduk['tempat_lahir'] . "," . date('d-m-Y', strtotime($penduduk['tanggal_lahir'])); ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">d</td>
-                                        <td>NIK</td>
-                                        <td>:</td>
-                                        <td><?php echo $penduduk['nik']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">e</td>
-                                        <td>Agama</td>
-                                        <td>:</td>
-                                        <td><?php echo $penduduk['agama']; ?></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="text-center">f</td>
-                                        <td>Kewarganeraan</td>
-                                        <td>:</td>
-                                        <td><?php echo $penduduk['kewarganegaraan']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">g</td>
-                                        <td>Status Perkawinan</td>
-                                        <td>:</td>
-                                        <td><?php echo $penduduk['status_perkawinan']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">h</td>
-                                        <td>Pekerjaan</td>
-                                        <td>:</td>
-                                        <td><?php echo $penduduk['pekerjaan']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">i</td>
-                                        <td>Alamat</td>
-                                        <td>:</td>
-                                        <td><?php echo $penduduk['alamat']; ?> RT/RW <?php echo $penduduk['rt'] . "/" . $penduduk['rw']; ?> Desa <?php echo $penduduk['kelurahan']; ?> Kecamatan <?php echo $penduduk['kecamatan']; ?> Kabupaten <?php echo $penduduk['kabupaten']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">j</td>
-                                        <td>Keterangan</td>
-                                        <td>:</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">k</td>
-                                        <td>Berlaku mulai tanggal</td>
-                                        <td>:</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">l</td>
-                                        <td>Tujuan</td>
-                                        <td>:</td>
-                                        <td><?php echo $penduduk['status_perkawinan']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4">Demikian surat keterangan ini dibuat agar dapat dipergunakan sebagaimana mestinya :</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <hr>
-                            <h5>Detail Pengajuan</h5>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>Jenis Pengajuan</td>
-                                        <td><?php echo $jenis_pengajuan['nama']; ?></td>
-                                    </tr>
-                                    <?php
-                                    if ($row['id_jenis_pengajuan'] == 1 || $row['id_jenis_pengajuan'] == 2) {
-
-                                        if ($row['id_jenis_pengajuan'] == 2) {
-                                    ?>
-                                            <tr>
-                                                <td>Tanggal Acara</td>
-                                                <td><?php echo date('d-m-Y H:i', strtotime($data['tanggal_acara'])); ?></td>
-                                            </tr>
-
-                                        <?php }; ?>
-
-                                        <tr>
-                                            <td>Keterangan</td>
-                                            <td><?php echo $data['keterangan']; ?></td>
-                                        </tr>
-
-                                    <?php
-
-                                    } else if ($row['id_jenis_pengajuan'] == 3) {
-                                    ?>
-
-                                        <tr>
-                                            <td>Tujuan Pengajuan</td>
-                                            <td><?php echo $data['tujuan_pengajuan']; ?></td>
-                                        </tr>
-
-                                    <?php
-                                    } else if ($row['id_jenis_pengajuan'] == 4) {
-                                    ?>
-
-                                        <tr>
-                                            <td>Tujuan Pengajuan SKCK</td>
-                                            <td><?php echo $data['tujuan_pengajuan_skck']; ?></td>
-                                        </tr>
-
-                                    <?php
-                                    } else if ($row['id_jenis_pengajuan'] == 5) {
-                                    ?>
-
-                                        <tr>
-                                            <td>Tempat, Tanggal Kematian</td>
-                                            <td><?php echo $data['tempat_kematian'] . "," . date('d-m-Y H:i:s', strtotime($data['tanggal_kematian'])); ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sebab Kematian</td>
-                                            <td><?php echo $data['sebab_kematian'] . "," . date('d-m-Y H:i:s', strtotime($data['tanggal_kematian'])); ?></td>
-                                        </tr>
-                                    <?php
-                                    }
-                                    ?>
-
-                                </tbody>
-                            </table>
-                        </div>
+                                <tr>
+                                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Kewarganeraan</td>
+                                    <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td><?php echo $penduduk['kewarganegaraan']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Status Perkawinan</td>
+                                    <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td><?php echo $penduduk['status_perkawinan']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Pekerjaan</td>
+                                    <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td><?php echo $penduduk['pekerjaan']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Alamat</td>
+                                    <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td><?php echo $penduduk['alamat']; ?> RT/RW <?php echo $penduduk['rt'] . "/" . $penduduk['rw']; ?> Desa <?php echo $penduduk['kelurahan']; ?> Kecamatan <?php echo $penduduk['kecamatan']; ?> Kabupaten <?php echo $penduduk['kabupaten']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Keterangan</td>
+                                    <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Berlaku mulai tanggal</td>
+                                    <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Tujuan</td>
+                                    <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td><?php echo $penduduk['status_perkawinan']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">Demikian surat keterangan ini dibuat agar dapat dipergunakan sebagaimana mestinya :</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr>
                     </div>
                 </div>
             </div>
