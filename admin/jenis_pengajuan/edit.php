@@ -4,9 +4,15 @@
     <form action="/layanan_desa/action/admin/jenis_pengajuan/update.php" method="post">
         <div class="card mt-4 mb-4">
             <div class="card-header">
-                <i class="fas fa-table me-1"></i>
-                Edit Jenis Pengajuan
-                <a href="/layanan_desa/admin/jenis_pengajuan">Kembali</a>
+            <div class="row">
+                    <div class="col-6">
+                        <i class="fas fa-table me-1"></i>
+                        Edit Jenis Pengajuan
+                    </div>
+                    <div class="col-6 text-end">
+                        <a href="/layanan_desa/admin/jenis_pengajuan" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left me-1"></i> Kembali</a>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <?php 
