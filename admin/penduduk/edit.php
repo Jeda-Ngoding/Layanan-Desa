@@ -4,22 +4,28 @@
     <form action="/layanan_desa/action/admin/penduduk/update.php" method="post">
         <div class="card">
             <div class="card-header">
-                <i class="fas fa-table me-1"></i>
-                Edit Data Penduduk
-                <a href="/layanan_desa/admin/penduduk">Kembali</a>
+                <div class="row">
+                    <div class="col-6">
+                        <i class="fas fa-table me-1"></i>
+                        Edit Data Penduduk
+                    </div>
+                    <div class="col-6 text-end">
+                        <a href="/layanan_desa/admin/penduduk" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left me-1"></i> Kembali</a>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
-                <?php 
-                        include '../../config/database.php';
+                <?php
+                include '../../config/database.php';
 
-                        $id = $_GET['id'];
+                $id = $_GET['id'];
 
-                        $db = new database();
-                        $db->select("penduduk","*","id='$id'");
-                        $result = $db->sql;
+                $db = new database();
+                $db->select("penduduk", "*", "id='$id'");
+                $result = $db->sql;
 
-                        $row = mysqli_fetch_assoc($result);
-                    ?>
+                $row = mysqli_fetch_assoc($result);
+                ?>
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <?php include 'form.php'; ?>
             </div>

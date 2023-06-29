@@ -1,10 +1,10 @@
-<?php require('../layouts/header.php'); 
+<?php require('../layouts/header.php');
 include '../../config/database.php';
 
 $id = $_GET['id'];
 
 $db = new database();
-$db->select("penduduk","*","id='$id'");
+$db->select("penduduk", "*", "id='$id'");
 $result = $db->sql;
 
 $penduduk = mysqli_fetch_assoc($result);
@@ -14,9 +14,15 @@ $penduduk = mysqli_fetch_assoc($result);
     <form action="">
         <div class="card">
             <div class="card-header">
-                <i class="fas fa-table me-1"></i>
-                    Detail Penduduk
-                    <a href="/layanan_desa/admin/penduduk">Kembali</a>
+                <div class="row">
+                    <div class="col-6">
+                        <i class="fas fa-table me-1"></i>
+                        Detail Penduduk
+                    </div>
+                    <div class="col-6 text-end">
+                        <a href="/layanan_desa/admin/penduduk" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left me-1"></i> Kembali</a>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
 
@@ -34,7 +40,7 @@ $penduduk = mysqli_fetch_assoc($result);
                             </tr>
                             <tr>
                                 <td>Tempat, Tanggal Lahir</td>
-                                <td>:&nbsp;<?php echo $penduduk['tempat_lahir'].",".date('d-m-Y',strtotime($penduduk['tanggal_lahir'])); ?></td>
+                                <td>:&nbsp;<?php echo $penduduk['tempat_lahir'] . "," . date('d-m-Y', strtotime($penduduk['tanggal_lahir'])); ?></td>
                             </tr>
                             <tr>
                                 <td>Jenis Kelamin</td>
@@ -46,14 +52,14 @@ $penduduk = mysqli_fetch_assoc($result);
                             </tr>
                             <tr>
                                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RT/RW</td>
-                                <td>:&nbsp;<?php echo $penduduk['rt']."/".$penduduk['rw']; ?></td>
+                                <td>:&nbsp;<?php echo $penduduk['rt'] . "/" . $penduduk['rw']; ?></td>
                             </tr>
                             <tr>
                                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kel/Desa</td>
                                 <td>:&nbsp;<?php echo $penduduk['kelurahan']; ?></td>
                             </tr>
                             <tr>
-                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kecamatan</td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kecamatan</td>
                                 <td>:&nbsp;<?php echo $penduduk['kecamatan']; ?></td>
                             </tr>
                             <tr>
