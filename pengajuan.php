@@ -52,52 +52,55 @@ $db = new Database();
                     </thead>
                     <tbody>
                         <?php
-                        $id_jenis_pengajuan = $_GET['jenis_pengajuan'];
-                        $nik = $_GET['nik'];
-                        $db->select("penduduk", "*", "nik='$nik'");
-                        $query_penduduk = $db->sql;
-                        $penduduk = mysqli_fetch_assoc($query_penduduk);
-                        $id_penduduk = $penduduk['id'];
-                        if(!empty($id_jenis_pengajuan)){
-                            $db->selectSuratPengajuan("sp.id_penduduk='$id_penduduk'AND sp.id_jenis_pengajuan='$id_jenis_pengajuan'");
-                        }else{
-                            $db->selectSuratPengajuan("sp.id_penduduk='$id_penduduk'");
-                        }
-                        
-                        $surat_pengajuan = $db->sql;
+
+                        if (isset($_GET['nik']) || isset($_GET['jenis_pengajuan'])) {
+                            $id_jenis_pengajuan = $_GET['jenis_pengajuan'];
+                            $nik = $_GET['nik'];
+                            $db->select("penduduk", "*", "nik='$nik'");
+                            $query_penduduk = $db->sql;
+                            $penduduk = mysqli_fetch_assoc($query_penduduk);
+                            $id_penduduk = $penduduk['id'];
+                            if (!empty($id_jenis_pengajuan)) {
+                                $db->selectSuratPengajuan("sp.id_penduduk='$id_penduduk'AND sp.id_jenis_pengajuan='$id_jenis_pengajuan'");
+                            } else {
+                                $db->selectSuratPengajuan("sp.id_penduduk='$id_penduduk'");
+                            }
+
+                            $surat_pengajuan = $db->sql;
                         ?>
-                        <?php
+                            <?php
 
-                        $row = mysqli_fetch_assoc($surat_pengajuan);
-                        
-                        if(count($row) > 0){
+                            $row = mysqli_fetch_assoc($surat_pengajuan);
 
-                            while ($row = mysqli_fetch_assoc($surat_pengajuan)) { ?>
-                                <tr>
-                                    <td><?php echo $row['nama_penduduk']; ?></td>
-                                    <td><?php echo $row['nama_pengajuan']; ?></td>
-                                    <td>
-                                        <div class="text-center">
-                                            <?php echo date("D, d-M-Y H:m", strtotime($row['created_at'])); ?></div>
-                                    </td>
-                                    <td>
-                                        <div class="text-center"><?php echo strtoupper($row['status']); ?></div>
-                                    </td>
-                                </tr>
+                            if (count($row) > 0) {
+
+                                while ($row = mysqli_fetch_assoc($surat_pengajuan)) { ?>
+                                    <tr>
+                                        <td><?php echo $row['nama_penduduk']; ?></td>
+                                        <td><?php echo $row['nama_pengajuan']; ?></td>
+                                        <td>
+                                            <div class="text-center">
+                                                <?php echo date("D, d-M-Y H:m", strtotime($row['created_at'])); ?></div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center"><?php echo strtoupper($row['status']); ?></div>
+                                        </td>
+                                    </tr>
 
                             <?php }
-
-                        }else{
+                            }
+                        } else {
                             ?>
                             <tr>
-                            <td colspan="4">
-                                <div class="text-center">
-                                    Data tidak tersedia !
-                                </div>
-                            </td>
+                                <td colspan="4">
+                                    <div class="text-center">
+                                        Data tidak tersedia !
+                                    </div>
+                                </td>
                             </tr>
                         <?php
                         }
+
 
                         ?>
                     </tbody>
