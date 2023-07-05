@@ -3,9 +3,9 @@
 class Database
 {
 
-    private $hostname = "localhost";
-    private $username = "root";
-    private $password = "root";
+    private $hostname = "127.0.0.1";
+    private $username = "jedangoding";
+    private $password = "@_Jedangoding123!!!";
     private $database = "layanan_desa";
     private $port = 3306;
     private $mysqli = "";
