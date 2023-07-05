@@ -7,6 +7,7 @@ class Database
     private $username = "root";
     private $password = "root";
     private $database = "layanan_desa";
+    private $port = 3306;
     private $mysqli = "";
     public $sql;
     private $result = array();
@@ -14,7 +15,7 @@ class Database
     function __construct()
     {
         date_default_timezone_set('Asia/Jakarta');
-        $this->mysqli = new mysqli($this->hostname, $this->username, $this->password, $this->database);
+        $this->mysqli = new mysqli($this->hostname, $this->username, $this->password, $this->database, $this->port);
     }
 
     public function insert($table, $data = array())
@@ -78,4 +79,3 @@ class Database
         $this->mysqli->close();
     }
 }
-
