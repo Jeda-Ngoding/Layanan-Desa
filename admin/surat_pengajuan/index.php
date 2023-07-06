@@ -28,7 +28,7 @@
                 </tfoot>
                 <tbody>
                     <?php 
-                        include '../../config/database.php';
+                        include '../../config/Database.php';
                         $b = new Database();
                         $b->selectSuratPengajuan();
                         $result = $b->sql;
