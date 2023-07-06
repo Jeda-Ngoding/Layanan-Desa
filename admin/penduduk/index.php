@@ -42,7 +42,7 @@
                 <tbody>
                     <?php
                     include '../../config/database.php';
-                    $b = new database();
+                    $b = new Database();
                     $b->select("penduduk", "*");
                     $result = $b->sql;
                     ?>
