@@ -33,7 +33,7 @@
                 </tfoot>
                 <tbody>
                     <?php
-                    include '../../config/database.php';
+                    include '../../config/Database.php';
                     $b = new database();
                     $b->select("akun", "*");
                     $result = $b->sql;

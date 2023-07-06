@@ -61,7 +61,7 @@ error_reporting(E_ALL);
         <h4 class="mb-4">Layanan Pengajuan</h4>
         <div class="row mb-5">
             <?php 
-                include 'config/database.php';
+                include 'config/Database.php';
                 $b = new database();
                 $b->select("jenis_pengajuan","*");
                 $result = $b->sql;

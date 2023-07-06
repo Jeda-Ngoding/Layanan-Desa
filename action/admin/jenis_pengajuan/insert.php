@@ -1,6 +1,6 @@
 <?php
 
-include '../../../config/database.php';
+include '../../../config/Database.php';
 if (isset($_POST['submit'])) {
     $nama = $_POST['nama'];
     $deskripsi = $_POST['deskripsi'];

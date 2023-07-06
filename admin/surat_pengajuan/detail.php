@@ -15,7 +15,7 @@
         </div>
         <div class="card-body">
             <?php
-            include '../../config/database.php';
+            include '../../config/Database.php';
 
             $id = $_GET['id'];
             $db = new database();

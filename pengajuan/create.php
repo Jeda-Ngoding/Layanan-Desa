@@ -1,7 +1,7 @@
 <?php 
     include('../layouts/header.php');
 
-    include '../config/database.php';
+    include '../config/Database.php';
 
     $id = $_GET['id'];
 
