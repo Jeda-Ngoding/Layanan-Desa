@@ -41,7 +41,7 @@
                 </tfoot>
                 <tbody>
                     <?php
-                    include '../../config/database.php';
+                    include '../../config/Database.php';
                     $b = new Database();
                     $b->select("penduduk", "*");
                     $result = $b->sql;
