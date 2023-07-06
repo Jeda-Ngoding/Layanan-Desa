@@ -34,7 +34,7 @@
                 <tbody>
                     <?php
                     include '../../config/Database.php';
-                    $b = new database();
+                    $b = new Database();
                     $b->select("akun", "*");
                     $result = $b->sql;
                     ?>

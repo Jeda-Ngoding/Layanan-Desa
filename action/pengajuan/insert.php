@@ -1,6 +1,6 @@
 <?php
 
-include '../../config/database.php';
+include '../../config/Database.php';
 if (isset($_POST['submit'])) {
     $id_jenis_pengajuan = $_POST['id_jenis_pengajuan'];
     $nik = $_POST['nik'];

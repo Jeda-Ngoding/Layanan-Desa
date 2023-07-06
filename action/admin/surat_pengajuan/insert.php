@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $created_at = date("Y-m-d h:i:s");
     $updated_at = date("Y-m-d h:i:s");
 
-    $db = new database();
+    $db = new Database();
     $db->insert('jenis_pengajuan',[
         'nama'=>$nama,
         'deskripsi'=>$deskripsi,

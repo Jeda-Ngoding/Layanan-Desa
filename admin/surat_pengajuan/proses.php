@@ -2,7 +2,7 @@
 include '../../config/Database.php';
 
 $id = $_GET['id'];
-$db = new database();
+$db = new Database();
 $db->selectSuratPengajuan("sp.id='$id'");
 $result = $db->sql;
 $row = mysqli_fetch_assoc($result);

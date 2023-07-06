@@ -1,6 +1,6 @@
 <?php
 
-include '../../../config/database.php';
+include '../../../config/Database.php';
 if (isset($_POST['submit'])) {
     $id = $_POST['id'];
     $nama = $_POST['nama'];
@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $status = $_POST['status'];
     $updated_at = date("Y-m-d h:i:s");
 
-    $db = new database();
+    $db = new Database();
     $db->update('surat_pengajuan',[
         'nama'=>$nama,
         'deskripsi'=>$deskripsi,

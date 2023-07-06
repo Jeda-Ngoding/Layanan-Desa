@@ -1,9 +1,9 @@
 <?php require('../layouts/header.php');
-include '../../config/database.php';
+include '../../config/Database.php';
 
 $id = $_GET['id'];
 
-$db = new database();
+$db = new Database();
 $db->select("penduduk", "*", "id='$id'");
 $result = $db->sql;
 

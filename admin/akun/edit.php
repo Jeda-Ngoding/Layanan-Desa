@@ -20,7 +20,7 @@
 
                         $id = $_GET['id'];
 
-                        $db = new database();
+                        $db = new Database();
                         $db->select("akun","*","id='$id'");
                         $result = $db->sql;
 

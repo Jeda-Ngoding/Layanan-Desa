@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $db = new database();
+    $db = new Database();
     $db->select("akun","*","username='$username' AND password='$password'");
     $result = $db->sql;
 
