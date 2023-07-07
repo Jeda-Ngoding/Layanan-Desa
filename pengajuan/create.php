@@ -1,15 +1,15 @@
-<?php 
-    include('../layouts/header.php');
+<?php
+include('../layouts/header.php');
 
-    include '../config/Database.php';
+include '../config/Database.php';
 
-    $id = $_GET['id'];
+$id = $_GET['id'];
 
-    $db = new database();
-    $db->select("jenis_pengajuan","*","id='$id'");
-    $result = $db->sql;
+$db = new database();
+$db->select("jenis_pengajuan", "*", "id='$id'");
+$result = $db->sql;
 
-    $row = mysqli_fetch_assoc($result);
+$row = mysqli_fetch_assoc($result);
 ?>
 
 <div class="container">
@@ -20,10 +20,12 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-6">
-                        <h5><?php if(isset($row)) { echo $row['nama']; } ?></h5>
+                        <h5><?php if (isset($row)) {
+                                echo $row['nama'];
+                            } ?></h5>
                     </div>
-                    <div class="col-6">
-                        <div class="text-end"><a href="/layanan_desa">Kembali</a></div>
+                    <div class="col-6 text-end">
+                        <a href="/" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left me-1"></i> Kembali</a>
                     </div>
                 </div>
             </div>
@@ -39,6 +41,6 @@
 
 </div>
 
-<?php 
+<?php
 include('../layouts/footer.php');
 ?>
