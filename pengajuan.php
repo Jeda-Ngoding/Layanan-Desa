@@ -70,12 +70,10 @@ $db = new Database();
                             }
 
                             $surat_pengajuan = $db->sql;
-                        ?>
-                            <?php
 
                             $row = mysqli_fetch_assoc($surat_pengajuan);
 
-                            if (count($row) > 0) {
+                            if (!empty($row)) {
 
                                 while ($row = mysqli_fetch_assoc($surat_pengajuan)) { ?>
                                     <tr>
@@ -90,7 +88,17 @@ $db = new Database();
                                         </td>
                                     </tr>
 
-                            <?php }
+                                <?php }
+                            } else {
+                                ?>
+                                <tr>
+                                    <td colspan="4">
+                                        <div class="text-center">
+                                            Data tidak tersedia !
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php
                             }
                         } else {
                             ?>
