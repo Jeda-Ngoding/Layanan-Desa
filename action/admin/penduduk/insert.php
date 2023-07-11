@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-include '../../../config/database.php';
+include '../../../config/Database.php';
 if (isset($_POST['submit'])) {
     $no_kk = $_POST['no_kk'];
     $nik = $_POST['nik'];
