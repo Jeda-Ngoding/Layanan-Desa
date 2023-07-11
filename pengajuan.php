@@ -62,10 +62,12 @@ $db = new Database();
                             $db->select("penduduk", "*", "nik='$nik'");
                             $query_penduduk = $db->sql;
                             $penduduk = mysqli_fetch_assoc($query_penduduk);
-                            $id_penduduk = $penduduk['id'];
-                            if (!empty($id_jenis_pengajuan)) {
+                            
+                            if (!empty($penduduk) && !empty($id_jenis_pengajuan)) {
+                                $id_penduduk = $penduduk['id'];
                                 $db->selectSuratPengajuan("sp.id_penduduk='$id_penduduk'AND sp.id_jenis_pengajuan='$id_jenis_pengajuan'");
-                            } else {
+                            } else if(!empty($penduduk)) {
+                                $id_penduduk = $penduduk['id'];
                                 $db->selectSuratPengajuan("sp.id_penduduk='$id_penduduk'");
                             }
 
