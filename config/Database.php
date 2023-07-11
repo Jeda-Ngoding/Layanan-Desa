@@ -3,10 +3,11 @@
 class Database
 {
 
-    private $hostname = "127.0.0.1";
-    private $username = "root";
-    private $password = "root";
+    private $hostname = "127.0.0.1:3306";
+    private $username = "jedangoding";
+    private $password = "@_Jedangoding123!!!";
     private $database = "layanan_desa";
+    private $port = 3306;
     private $mysqli = "";
     public $sql;
     private $result = array();
