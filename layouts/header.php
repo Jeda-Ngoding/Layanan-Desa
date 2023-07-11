@@ -43,7 +43,7 @@ error_reporting(E_ALL);
                 </a>
 
                 <ul class="nav nav-pills mt-2">
-                    <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="/layanan_desa/pengajuan.php" class="nav-link">Pengajuan</a></li>
                     <li class="nav-item"><a href="/layanan_desa/login.php" class="nav-link">Login</a></li>
                 </ul>
