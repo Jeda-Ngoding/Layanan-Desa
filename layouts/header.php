@@ -12,13 +12,21 @@ error_reporting(E_ALL);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Login - SB Admin</title>
+    <title>Sistem Informasi Pengajuan Surat ( SIPS)</title>
     <link href="/layanan_desa/assets/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <style>
     .carousel-item {
-        height: 500px;
+        max-height: 500px;
     }
+    .carousel .item>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
     </style>
 </head>
 
@@ -31,7 +39,7 @@ error_reporting(E_ALL);
                     <img width="50"
                         src="/layanan_desa/assets/logo_kabupaten_madiun.gif"
                         alt="">
-                    <span class="fs-4"></span>
+                    <span class="fs-3">&nbsp;Sistem Informasi Pengajuan Surat ( SIPS)</span>
                 </a>
 
                 <ul class="nav nav-pills mt-2">

@@ -19,7 +19,7 @@ error_reporting(E_ALL);
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://images.pexels.com/photos/1196121/pexels-photo-1196121.jpeg"
+                        <img src="assets/image-1.jpeg"
                             class="d-block w-100 h-100 rounded" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>First slide label</h5>
@@ -27,7 +27,7 @@ error_reporting(E_ALL);
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.pexels.com/photos/2922653/pexels-photo-2922653.jpeg"
+                        <img src="assets/image-2.jpeg"
                             class="d-block w-100 h-100 rounded" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Second slide label</h5>
@@ -35,7 +35,7 @@ error_reporting(E_ALL);
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.pexels.com/photos/126793/pexels-photo-126793.jpeg"
+                        <img src="assets/image-3.jpeg"
                             class="d-block w-100 h-100 rounded" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Third slide label</h5>
