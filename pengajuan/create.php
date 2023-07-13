@@ -12,7 +12,7 @@ $result = $db->sql;
 $row = mysqli_fetch_assoc($result);
 ?>
 
-<div class="container">
+<div class="container mb-5">
 
     <form action="/layanan_desa/action/pengajuan/insert.php" method="post">
         <input type="hidden" name="id_jenis_pengajuan" value="<?php echo $id; ?>">

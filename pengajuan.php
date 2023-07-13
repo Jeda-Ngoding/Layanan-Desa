@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 $db = new Database();
 ?>
 
-<div class="container">
+<div class="container mb-5">
     <div class="card">
         <div class="card-body">
             <form action="" method="get">
