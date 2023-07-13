@@ -14,5 +14,5 @@
     <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l&nbsp;&nbsp;&nbsp;</td>
     <td>Tujuan</td>
     <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-    <td><?php echo $penduduk['status_perkawinan']; ?></td>
+    <td><?php echo $data['tujuan']; ?></td>
 </tr>

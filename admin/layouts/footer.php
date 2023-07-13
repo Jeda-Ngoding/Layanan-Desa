@@ -1,13 +1,8 @@
 </main>
 <footer class="py-4 bg-light mt-auto">
     <div class="container-fluid px-4">
-        <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">Copyright &copy; Your Website 2023</div>
-            <div>
-                <a href="#">Privacy Policy</a>
-                &middot;
-                <a href="#">Terms &amp; Conditions</a>
-            </div>
+        <div class="d-flex align-items-center justify-content-center small">
+            <div class="text-muted">Copyright &copy; Sistem Informasi Pengajuan Surat ( SIPS) 2023</div>
         </div>
     </div>
 </footer>
