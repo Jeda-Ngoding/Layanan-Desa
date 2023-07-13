@@ -138,7 +138,7 @@
                         </tr>
                         <?php
                         if ($jenis_pengajuan['id'] == 1) {
-                            include 'keterangan /sku.php';
+                            include 'keterangan/sku.php';
                         } elseif ($jenis_pengajuan['id'] == 2) {
                             include 'keterangan/sik.php';
                         } elseif ($jenis_pengajuan['id'] == 3) {
