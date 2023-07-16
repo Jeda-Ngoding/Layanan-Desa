@@ -10,7 +10,7 @@ $db = new Database();
 <div class="container mb-5">
     <div class="card">
         <div class="card-body">
-            <form action="" method="get">
+            <form action="" method="GET">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group mb-2">
@@ -62,37 +62,40 @@ $db = new Database();
                             $db->select("penduduk", "*", "nik='$nik'");
                             $query_penduduk = $db->sql;
                             $penduduk = mysqli_fetch_assoc($query_penduduk);
-                            
+
                             if (!empty($penduduk) && !empty($id_jenis_pengajuan)) {
                                 $id_penduduk = $penduduk['id'];
                                 $db->selectSuratPengajuan("sp.id_penduduk='$id_penduduk'AND sp.id_jenis_pengajuan='$id_jenis_pengajuan'");
-                            } else if(!empty($penduduk)) {
+                            } else if (!empty($penduduk)) {
                                 $id_penduduk = $penduduk['id'];
                                 $db->selectSuratPengajuan("sp.id_penduduk='$id_penduduk'");
                             }
 
                             $surat_pengajuan = $db->sql;
 
-                            $row = mysqli_fetch_assoc($surat_pengajuan);
+                            $countRow = 0;
 
-                            if (!empty($row)) {
+                            while ($row = mysqli_fetch_assoc($surat_pengajuan)) { ?>
+                                <tr>
+                                    <td><?php echo $row['nama_penduduk']; ?></td>
+                                    <td><?php echo $row['nama_pengajuan']; ?></td>
+                                    <td>
+                                        <div class="text-center">
+                                            <?php echo date("D, d-M-Y H:m", strtotime($row['created_at'])); ?></div>
+                                    </td>
+                                    <td>
+                                        <div class="text-center"><?php echo strtoupper($row['status']); ?></div>
+                                    </td>
+                                </tr>
 
-                                while ($row = mysqli_fetch_assoc($surat_pengajuan)) { ?>
-                                    <tr>
-                                        <td><?php echo $row['nama_penduduk']; ?></td>
-                                        <td><?php echo $row['nama_pengajuan']; ?></td>
-                                        <td>
-                                            <div class="text-center">
-                                                <?php echo date("D, d-M-Y H:m", strtotime($row['created_at'])); ?></div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center"><?php echo strtoupper($row['status']); ?></div>
-                                        </td>
-                                    </tr>
+                            <?php
 
-                                <?php }
-                            } else {
-                                ?>
+
+                                $countRow++;
+                            }
+
+                            if ($countRow == 0) {
+                            ?>
                                 <tr>
                                     <td colspan="4">
                                         <div class="text-center">
