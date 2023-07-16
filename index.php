@@ -63,7 +63,7 @@ error_reporting(E_ALL);
             <?php 
                 include 'config/Database.php';
                 $b = new database();
-                $b->select("jenis_pengajuan","*");
+                $b->select("jenis_pengajuan","*","status='active'");
                 $result = $b->sql;
             ?>
             <?php while ($row = mysqli_fetch_assoc($result)) { ?>
