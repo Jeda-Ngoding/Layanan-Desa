@@ -129,7 +129,7 @@
                                         echo 'Lajang';
                                         break;
                                     case 2:
-                                        echo 'Kawin';
+                                        echo 'Menikah';
                                         break;
                                     case 3:
                                         echo 'Cerai Hidup';
@@ -194,7 +194,7 @@
             </div>
         </div>
         <div class="card-footer">
-            <a href="proses.php?id=<?php echo $row['id']; ?>" target="_blank" class="btn btn-primary">Proses</a>
+            <a href="proses.php?id=<?php echo $row['id']; ?>" target="_blank" class="btn btn-primary">Proses & Download Dokumen</a>
         </div>
     </div>
 </div>

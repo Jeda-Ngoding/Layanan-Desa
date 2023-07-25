@@ -71,7 +71,7 @@ $penduduk = mysqli_fetch_assoc($result);
                                                     echo 'Lajang';
                                                     break;
                                                 case 2:
-                                                    echo 'Kawin';
+                                                    echo 'Menikah';
                                                     break;
                                                 case 3:
                                                     echo 'Cerai Hidup';

@@ -20,7 +20,7 @@ $jenis_pengajuan = $data['jenis_pengajuan'];
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Login - SB Admin</title>
+    <title>Sistem Informasi Pengajuan Surat (SIPS)</title>
     <link href="/layanan_desa/assets/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <style>
@@ -30,8 +30,7 @@ $jenis_pengajuan = $data['jenis_pengajuan'];
     </style>
 </head>
 
-<body class="" onload="window.print()">
-
+<body class="">
     <main class="m-2">
         <table class="table table-bordered table-sm">
             <tbody>
@@ -143,7 +142,7 @@ $jenis_pengajuan = $data['jenis_pengajuan'];
                 </tr>
                 <?php
                 if ($jenis_pengajuan['id'] == 1) {
-                    include 'keterangan /sku.php';
+                    include 'keterangan/sku.php';
                 } elseif ($jenis_pengajuan['id'] == 2) {
                     include 'keterangan/sik.php';
                 } elseif ($jenis_pengajuan['id'] == 3) {
