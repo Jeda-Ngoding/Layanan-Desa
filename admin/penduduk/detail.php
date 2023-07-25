@@ -64,7 +64,27 @@ $penduduk = mysqli_fetch_assoc($result);
                             </tr>
                             <tr>
                                 <td>Status Perkawinan</td>
-                                <td>:&nbsp;<?php echo $penduduk['status_perkawinan']; ?></td>
+                                <td>:&nbsp;<?php
+
+                                            switch ($penduduk['status_perkawinan']) {
+                                                case 1:
+                                                    echo 'Lajang';
+                                                    break;
+                                                case 2:
+                                                    echo 'Kawin';
+                                                    break;
+                                                case 3:
+                                                    echo 'Cerai Hidup';
+                                                    break;
+                                                case 4:
+                                                    echo  'Cerai Mati';
+                                                    break;
+                                                default:
+                                                    echo '-';
+                                                    break;
+                                            }
+
+                                            ?></td>
                             </tr>
                             <tr>
                                 <td>Pekerjaan</td>
@@ -73,10 +93,6 @@ $penduduk = mysqli_fetch_assoc($result);
                             <tr>
                                 <td>Kewarganeraan</td>
                                 <td>:&nbsp;<?php echo $penduduk['kewarganegaraan']; ?></td>
-                            </tr>
-                            <tr>
-                                <td>Berlaku Hingga</td>
-                                <td>:&nbsp;<?php echo $penduduk['status_perkawinan']; ?></td>
                             </tr>
 
                         </tbody>

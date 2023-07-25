@@ -10,15 +10,15 @@
 <tr>
     <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hari / Tanggal</td>
     <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-    <td></td>
+    <td><?php echo date('D, d-M-Y H:i',strtotime($data['tanggal_kematian'])) ?></td>
 </tr>
 <tr>
     <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tempat Kematian</td>
     <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-    <td><?php echo $penduduk['status_perkawinan']; ?></td>
+    <td><?php echo $data['tempat_kematian']; ?></td>
 </tr>
 <tr>
     <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sebab Kematian</td>
     <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-    <td><?php echo $penduduk['status_perkawinan']; ?></td>
+    <td><?php echo $data['sebab_kematian']; ?></td>
 </tr>

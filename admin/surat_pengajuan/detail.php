@@ -122,7 +122,27 @@
                             <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g&nbsp;&nbsp;&nbsp;</td>
                             <td>Status Perkawinan</td>
                             <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-                            <td><?php echo $penduduk['status_perkawinan']; ?></td>
+                            <td><?php
+
+                                switch ($penduduk['status_perkawinan']) {
+                                    case 1:
+                                        echo 'Lajang';
+                                        break;
+                                    case 2:
+                                        echo 'Kawin';
+                                        break;
+                                    case 3:
+                                        echo 'Cerai Hidup';
+                                        break;
+                                    case 4:
+                                        echo  'Cerai Mati';
+                                        break;
+                                    default:
+                                        echo '-';
+                                        break;
+                                }
+
+                                ?></td>
                         </tr>
                         <tr>
                             <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h&nbsp;&nbsp;&nbsp;</td>
