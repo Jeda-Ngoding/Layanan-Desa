@@ -9,6 +9,14 @@ $row = mysqli_fetch_assoc($result);
 $data = json_decode($row['data'], true);
 $penduduk = $data['penduduk'];
 $jenis_pengajuan = $data['jenis_pengajuan'];
+$idJenisPengajuan = $jenis_pengajuan['id'];
+
+// update data pengajuan
+$updated_at = date("Y-m-d h:i:s");
+$db->update('surat_pengajuan',[
+    'status'=>'proses',
+    'updated_at'=>$updated_at
+],"id=$idJenisPengajuan");
 
 ?>
 <!DOCTYPE html>
