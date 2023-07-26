@@ -5,6 +5,23 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+$db = new Database();
+$db->select("penduduk", "count(*) as total");
+$resultTotalPenduduk = $db->sql;
+$rowPenduduk = mysqli_fetch_assoc($resultTotalPenduduk);
+
+$db->select("surat_pengajuan","count(*) as total_pengajuan_masuk");
+$resultTotalPengajuan = $db->sql;
+$rowTotalPengajuan = mysqli_fetch_assoc($resultTotalPengajuan);
+
+$db->select("surat_pengajuan","count(*) as total_pengajuan_proses","status='proses'");
+$resultTotalPengajuanProses = $db->sql;
+$rowTotalPengajuanProses = mysqli_fetch_assoc($resultTotalPengajuanProses);
+
+$db->select("surat_pengajuan","count(*) as total_pengajuan_done","status='done'");
+$resultTotalPengajuanDone = $db->sql;
+$rowTotalPengajuanDone = mysqli_fetch_assoc($resultTotalPengajuanDone);
+
 ?>
 
 <div class="container-fluid px-4 py-4">
@@ -12,28 +29,36 @@ error_reporting(E_ALL);
         <div class="col-xl-3 col-md-6">
             <div class="card mb-4">
                 <div class="card-body">
-
+                    <div class="text-center">
+                        <p><?php echo $rowPenduduk['total']; ?> <br /> Total Penduduk</p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card mb-4">
                 <div class="card-body">
-
+                    <div class="text-center">
+                        <p><?php echo $rowTotalPengajuan['total_pengajuan_masuk']; ?> <br /> Pengajuan Masuk</p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card mb-4">
                 <div class="card-body">
-
+                    <div class="text-center">
+                        <p><?php echo $rowTotalPengajuanProses['total_pengajuan_proses']; ?> <br /> Pengajuan Proses</p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card mb-4">
                 <div class="card-body">
-
+                    <div class="text-center">
+                        <p><?php echo $rowTotalPengajuanDone['total_pengajuan_done']; ?> <br /> Pengajuan Selesai</p>
+                    </div>
                 </div>
             </div>
         </div>

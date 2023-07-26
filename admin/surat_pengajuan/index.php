@@ -42,6 +42,18 @@
                         <td>
                             <div class="text-center">
                                 <a href="detail.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-secondary btn-sm">Detail</a>
+                                <?php
+                                    if($row['status'] == 'proses'){
+                                        ?>
+                                            <a href="/layanan_desa/action/admin/surat_pengajuan/done.php?id=<?php echo $row['id']; ?>" class="btn btn-success btn-sm">Selesai</a>
+                                        <?php
+                                    }else{
+                                        ?>
+                                            <a href="#" class="btn btn-success btn-sm disabled" disabled>Selesai</a>
+                                        <?php
+                                    }
+                                
+                                ?>
                             </div>
                         </td>
                     </tr>
