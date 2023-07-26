@@ -93,19 +93,19 @@ $rowTotalPengajuanDone = mysqli_fetch_assoc($resultTotalPengajuanDone);
                     $db->selectSuratPengajuan("sp.status='done'");
                     $suratKeluar = $db->sql;
                     ?>
-                    <?php while ($row = mysqli_fetch_assoc($suratKeluar)) { ?>
+                    <?php while ($rowSP = mysqli_fetch_assoc($suratKeluar)) { ?>
                         <tr>
-                            <td><?php echo $row['nama_penduduk']; ?></td>
-                            <td><?php echo $row['nama_pengajuan']; ?></td>
+                            <td><?php echo $rowSP['nama_penduduk']; ?></td>
+                            <td><?php echo $rowSP['nama_pengajuan']; ?></td>
                             <td>
-                                <div class="text-center"><?php echo date("D, d-M-Y H:m", strtotime($row['created_at'])); ?></div>
+                                <div class="text-center"><?php echo date("D, d-M-Y H:m", strtotime($rowSP['created_at'])); ?></div>
                             </td>
                             <td>
-                                <div class="text-center"><?php echo strtoupper($row['status']); ?></div>
+                                <div class="text-center"><?php echo strtoupper($rowSP['status']); ?></div>
                             </td>
                             <td>
                                 <div class="text-center">
-                                    <a href="detail.php?id=" class="btn btn-outline-secondary btn-sm">Detail</a>
+                                    <a href="/layanan_desa/admin/surat_pengajuan/detail.php?proses=false&id=<?php echo $rowSP['id']; ?>" class="btn btn-outline-secondary btn-sm">Detail</a>
                                 </div>
                             </td>
                         </tr>

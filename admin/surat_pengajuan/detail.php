@@ -9,7 +9,18 @@
                     Detail Surat Pengajuan
                 </div>
                 <div class="col-6 text-end">
-                    <a href="/layanan_desa/admin/surat_pengajuan" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left me-1"></i> Kembali</a>
+                    <?php
+                    if (!isset($_GET['proses'])) {
+                    ?>
+                        <a href="/layanan_desa/admin/surat_pengajuan" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left me-1"></i> Kembali</a>
+                    <?php
+                    } else {
+                    ?>
+                        <a href="/layanan_desa/admin/" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left me-1"></i> Kembali</a>
+                    <?php
+                    }
+                    ?>
+
                 </div>
             </div>
         </div>
@@ -193,9 +204,15 @@
                 ?>
             </div>
         </div>
-        <div class="card-footer">
-            <a href="proses.php?id=<?php echo $row['id']; ?>" target="_blank" class="btn btn-primary">Proses & Download Dokumen</a>
-        </div>
+        <?php
+        if (!isset($_GET['proses'])) {
+        ?>
+            <div class="card-footer">
+                <a href="proses.php?id=<?php echo $row['id']; ?>" target="_blank" class="btn btn-primary">Proses & Download Dokumen</a>
+            </div>
+        <?php
+        }
+        ?>
     </div>
 </div>
 
