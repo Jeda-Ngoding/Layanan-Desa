@@ -25,7 +25,7 @@ $row = mysqli_fetch_assoc($result);
                             } ?></h5>
                     </div>
                     <div class="col-6 text-end">
-                        <a href="/layanan_desa" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left me-1"></i> Kembali</a>
+                        <a href="/" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left me-1"></i> Kembali</a>
                     </div>
                 </div>
             </div>
