@@ -16,7 +16,7 @@ $updated_at = date("Y-m-d h:i:s");
 $db->update('surat_pengajuan',[
     'status'=>'proses',
     'updated_at'=>$updated_at
-],"id=$idJenisPengajuan");
+],"id=$id");
 
 ?>
 <!DOCTYPE html>
