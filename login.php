@@ -16,18 +16,18 @@ error_reporting(E_ALL);
     <link href="/layanan_desa/assets/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <style>
-    .carousel-item {
-        max-height: 500px;
-    }
+        .carousel-item {
+            max-height: 500px;
+        }
 
-    .carousel .item>img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        max-width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+        .carousel .item>img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -36,15 +36,15 @@ error_reporting(E_ALL);
     <main>
         <div class="container">
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <a href="/layanan_desa/index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                     <img width="50" src="/layanan_desa/assets/logo_kabupaten_madiun.gif" alt="">
                     <span class="fs-3">&nbsp;Sistem Informasi Pengajuan Surat ( SIPS)</span>
                 </a>
 
                 <ul class="nav nav-pills mt-2">
-                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="/pengajuan.php" class="nav-link">Pengajuan</a></li>
-                    <li class="nav-item"><a href="/login.php" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="/layanan_desa/index.php" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="/layanan_desa/pengajuan.php" class="nav-link">Pengajuan</a></li>
+                    <li class="nav-item"><a href="/layanan_desa/login.php" class="nav-link">Login</a></li>
                 </ul>
             </header>
         </div>
@@ -61,32 +61,22 @@ error_reporting(E_ALL);
                             <form action="" id="formLogin">
                                 <div class="form-group mb-3">
                                     <label for="inputUsername">Username</label>
-                                    <input class="form-control" id="inputUsername" type="text" name="username"
-                                        placeholder="Username" />
+                                    <input class="form-control" id="inputUsername" type="text" name="username" placeholder="Username" />
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="inputPassword">Password</label>
-                                    <input class="form-control" id="inputPassword" type="password" name="password"
-                                        placeholder="Password" />
+                                    <input class="form-control" id="inputPassword" type="password" name="password" placeholder="Password" />
                                 </div>
                                 <div class="form-group mb-3">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="border rounded">
-                                                <div class="text-center" id="captcha">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <input class="form-control" type="text" placeholder="Masukkan Captcha"
-                                                id="cpatchaTextBox" />
+                                    <div class="border rounded mb-3">
+                                        <div class="text-center" id="captcha">
                                         </div>
                                     </div>
+                                    <input class="form-control" type="text" placeholder="Masukkan Captcha" id="cpatchaTextBox" />
                                 </div>
                                 <div class="text-center mt-4 mb-0">
                                     <input type="reset" class="btn btn-warning" name="reset" value="Batal" />
-                                    <input type="submit" class="btn btn-primary" id="submitButton" name="submit"
-                                        value="Login" />
+                                    <input type="submit" class="btn btn-primary" id="submitButton" name="submit" value="Login" />
                                 </div>
                             </form>
                         </div>
@@ -106,47 +96,47 @@ error_reporting(E_ALL);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/layanan_desa//assets/js/scripts.js"></script>
     <script>
-    var code;
+        var code;
 
-    function createCaptcha() {
-        //clear the contents of captcha div first 
-        document.getElementById('captcha').innerHTML = "";
-        var charsArray =
-            "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$%^&*";
-        var lengthOtp = 6;
-        var captcha = [];
-        for (var i = 0; i < lengthOtp; i++) {
-            //below code will not allow Repetition of Characters
-            var index = Math.floor(Math.random() * charsArray.length + 1); //get the next character from the array
-            if (captcha.indexOf(charsArray[index]) == -1)
-                captcha.push(charsArray[index]);
-            else i--;
-        }
-        var canv = document.createElement("canvas");
-        canv.id = "captcha";
-        canv.width = 100;
-        canv.height = 45;
-        var ctx = canv.getContext("2d");
-        ctx.font = "25px Georgia";
-        ctx.strokeText(captcha.join(""), 0, 30);
-        //storing captcha so that can validate you can save it somewhere else according to your specific requirements
-        code = captcha.join("");
-        document.getElementById("captcha").appendChild(canv); // adds the canvas to the body element
-    }
-
-    $(document).ready(function() {
-        $('#submitButton').on('click', (e) => {
-            if ($('#cpatchaTextBox').val() == code) {
-                let formLogin = $('#formLogin')
-                formLogin.attr("action", "/layanan_desa/action/auth/login.php")
-                formLogin.attr("method", "post")
-                formLogin.submit()
-            } else {
-                alert("Captcha Tidak Valid, Masukkan Ulang Kode !!!");
-                createCaptcha();
+        function createCaptcha() {
+            //clear the contents of captcha div first 
+            document.getElementById('captcha').innerHTML = "";
+            var charsArray =
+                "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$%^&*";
+            var lengthOtp = 6;
+            var captcha = [];
+            for (var i = 0; i < lengthOtp; i++) {
+                //below code will not allow Repetition of Characters
+                var index = Math.floor(Math.random() * charsArray.length + 1); //get the next character from the array
+                if (captcha.indexOf(charsArray[index]) == -1)
+                    captcha.push(charsArray[index]);
+                else i--;
             }
+            var canv = document.createElement("canvas");
+            canv.id = "captcha";
+            canv.width = 100;
+            canv.height = 45;
+            var ctx = canv.getContext("2d");
+            ctx.font = "25px Georgia";
+            ctx.strokeText(captcha.join(""), 0, 30);
+            //storing captcha so that can validate you can save it somewhere else according to your specific requirements
+            code = captcha.join("");
+            document.getElementById("captcha").appendChild(canv); // adds the canvas to the body element
+        }
+
+        $(document).ready(function() {
+            $('#submitButton').on('click', (e) => {
+                if ($('#cpatchaTextBox').val() == code) {
+                    let formLogin = $('#formLogin')
+                    formLogin.attr("action", "/layanan_desa/action/auth/login.php")
+                    formLogin.attr("method", "post")
+                    formLogin.submit()
+                } else {
+                    alert("Captcha Tidak Valid, Masukkan Ulang Kode !!!");
+                    createCaptcha();
+                }
+            })
         })
-    })
     </script>
 </body>
 
