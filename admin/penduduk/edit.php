@@ -16,6 +16,18 @@ $db->select("penduduk", "*", "id='$id'");
 $result_penduduk = $db->sql;
 $row = mysqli_fetch_assoc($result_penduduk);
 
+$db->select("provincies", "*");
+$result_provincies = $db->sql;
+
+// $db->select("regencies", "*");
+// $result_regencies = $db->sql;
+
+// $db->select("districts", "*");
+// $result_districts = $db->sql;
+
+// $db->select("villages", "*");
+// $result_villages = $db->sql;
+
 ?>
 
 <div class="container-fluid px-4 py-4">
@@ -28,7 +40,8 @@ $row = mysqli_fetch_assoc($result_penduduk);
                         Edit Data Penduduk
                     </div>
                     <div class="col-6 text-end">
-                        <a href="/layanan_desa/admin/penduduk" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left me-1"></i> Kembali</a>
+                        <a href="/layanan_desa/admin/penduduk" class="btn btn-warning btn-sm"><i
+                                class="fas fa-arrow-left me-1"></i> Kembali</a>
                     </div>
                 </div>
             </div>

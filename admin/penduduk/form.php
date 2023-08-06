@@ -151,22 +151,20 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group mb-2">
-                    <label for="register-form-name">Kelurahan / Desa:</label>
-                    <input type="text" name="kelurahan" value="<?php if (isset($row)) {
-                                                                    echo $row['kelurahan'];
-                                                                } ?>" class="form-control" required>
+                    <label for="register-form-name">Provinsi:</label>
+                    <select class="form-select" name="provinsi" required>
+                        <?php while ($row_provincies = mysqli_fetch_assoc($result_provincied)) { ?>
+                            <option <?php if (isset($row) && $row['provinsi'] == $row_provincies['name']) {
+                                        echo "selected";
+                                    } ?> value="<?php if (isset($row)) {
+                                                    echo $row['provinsi'];
+                                                } ?>"><?php if (isset($row_provincies)) {
+                                                            echo $row_provincies['name'];
+                                                        } ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-group mb-2">
-                    <label for="register-form-name">Kecamatan:</label>
-                    <input type="text" name="kecamatan" value="<?php if (isset($row)) {
-                                                                    echo $row['kecamatan'];
-                                                                } ?>" class="form-control" required>
-                </div>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-md-6">
                 <div class="form-group mb-2">
                     <label for="register-form-name">Kabupaten/Kota:</label>
@@ -175,11 +173,21 @@
                                                                 } ?>" class="form-control" required>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-md-6">
                 <div class="form-group mb-2">
-                    <label for="register-form-name">Provinsi:</label>
-                    <input type="text" name="provinsi" value="<?php if (isset($row)) {
-                                                                    echo $row['provinsi'];
+                    <label for="register-form-name">Kecamatan:</label>
+                    <input type="text" name="kecamatan" value="<?php if (isset($row)) {
+                                                                    echo $row['kecamatan'];
+                                                                } ?>" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group mb-2">
+                    <label for="register-form-name">Kelurahan / Desa:</label>
+                    <input type="text" name="kelurahan" value="<?php if (isset($row)) {
+                                                                    echo $row['kelurahan'];
                                                                 } ?>" class="form-control" required>
                 </div>
             </div>
