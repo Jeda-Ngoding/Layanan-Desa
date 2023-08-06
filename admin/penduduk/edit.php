@@ -1,5 +1,23 @@
 <?php require('../layouts/header.php'); ?>
 
+<?php
+
+include '../../config/Database.php';
+$db = new Database();
+$db->select("agama", "*");
+$result_agama = $db->sql;
+
+$db->select("status_perkawinan", "*");
+$result_status_perkawinan = $db->sql;
+
+
+$id = $_GET['id'];
+$db->select("penduduk", "*", "id='$id'");
+$result_penduduk = $db->sql;
+$row = mysqli_fetch_assoc($result_penduduk);
+
+?>
+
 <div class="container-fluid px-4 py-4">
     <form action="/layanan_desa/action/admin/penduduk/update.php" method="post">
         <div class="card">
@@ -15,17 +33,6 @@
                 </div>
             </div>
             <div class="card-body">
-                <?php
-                include '../../config/Database.php';
-
-                $id = $_GET['id'];
-
-                $db = new Database();
-                $db->select("penduduk", "*", "id='$id'");
-                $result = $db->sql;
-
-                $row = mysqli_fetch_assoc($result);
-                ?>
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <?php include 'form.php'; ?>
             </div>

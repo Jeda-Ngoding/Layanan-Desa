@@ -1,5 +1,17 @@
 <?php require('../layouts/header.php'); ?>
 
+<?php
+
+include '../../config/Database.php';
+$db = new Database();
+$db->select("agama", "*");
+$result_agama = $db->sql;
+
+$db->select("status_perkawinan", "*");
+$result_status_perkawinan = $db->sql;
+
+?>
+
 <div class="container-fluid px-4 py-4">
     <form action="/layanan_desa/action/admin/penduduk/insert.php" method="post">
         <div class="card mt-4 mb-4">
