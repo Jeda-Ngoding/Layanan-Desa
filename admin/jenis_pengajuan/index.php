@@ -9,7 +9,8 @@
                     Data Jenis Pengajuan
                 </div>
                 <div class="col-6 text-end">
-                    <a href="/layanan_desa/admin/jenis_pengajuan/create.php" class="btn btn-success btn-sm"><i class="fas fa-plus me-1"></i> Tambah Jenis Pengajuan</a>
+                    <a href="/layanan_desa/admin/jenis_pengajuan/create.php" class="btn btn-success btn-sm"><i
+                            class="fas fa-plus me-1"></i> Tambah Jenis Pengajuan</a>
                 </div>
             </div>
         </div>
@@ -39,16 +40,17 @@
                     $result = $b->sql;
                     ?>
                     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                        <tr>
-                            <td><?php echo $row['nama']; ?></td>
-                            <td><?php echo $row['deskripsi']; ?></td>
-                            <td><?php echo $row['status']; ?></td>
-                            <td>
-                                <div class="text-center">
-                                    <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-warning btn-sm">Edit</a>
-                                </div>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td><?php echo $row['nama']; ?></td>
+                        <td><?php echo $row['deskripsi']; ?></td>
+                        <td><?php echo $row['status'] == 'active' ? 'Aktif':'Non Aktif'; ?></td>
+                        <td>
+                            <div class="text-center">
+                                <a href="edit.php?id=<?php echo $row['id']; ?>"
+                                    class="btn btn-outline-warning btn-sm">Edit</a>
+                            </div>
+                        </td>
+                    </tr>
                     <?php } ?>
                 </tbody>
             </table>

@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-6">
                     <i class="fas fa-table me-1"></i>
-                    Detail Surat Pengajuan
+                    Detail Surat Masuk
                 </div>
                 <div class="col-6 text-end">
                     <?php
@@ -16,7 +16,8 @@
                     <?php
                     } else {
                     ?>
-                        <a href="/layanan_desa/admin/" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left me-1"></i> Kembali</a>
+                        <a href="/layanan_desa/admin/" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left me-1"></i>
+                            Kembali</a>
                     <?php
                     }
                     ?>
@@ -102,13 +103,15 @@
                             <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;</td>
                             <td>Jenis Kelamin</td>
                             <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-                            <td><?php echo $penduduk['jenis_kelamin']; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gol.Darah : <?php echo $penduduk['golongan_darah']; ?></td>
+                            <td><?php echo $penduduk['jenis_kelamin']; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gol.Darah :
+                                <?php echo $penduduk['golongan_darah']; ?></td>
                         </tr>
                         <tr>
                             <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;&nbsp;</td>
                             <td>Tempat, Tanggal Lahir</td>
                             <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-                            <td><?php echo $penduduk['tempat_lahir'] . "," . date('d-m-Y', strtotime($penduduk['tanggal_lahir'])); ?></td>
+                            <td><?php echo $penduduk['tempat_lahir'] . "," . date('d-m-Y', strtotime($penduduk['tanggal_lahir'])); ?>
+                            </td>
                         </tr>
                         <tr>
                             <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d&nbsp;&nbsp;&nbsp;</td>
@@ -165,7 +168,10 @@
                             <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;</td>
                             <td>Alamat</td>
                             <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-                            <td><?php echo $penduduk['alamat']; ?> RT/RW <?php echo $penduduk['rt'] . "/" . $penduduk['rw']; ?> Desa <?php echo $penduduk['kelurahan']; ?> Kecamatan <?php echo $penduduk['kecamatan']; ?> Kabupaten <?php echo $penduduk['kabupaten']; ?></td>
+                            <td><?php echo $penduduk['alamat']; ?> RT/RW
+                                <?php echo $penduduk['rt'] . "/" . $penduduk['rw']; ?> Desa
+                                <?php echo $penduduk['kelurahan']; ?> Kecamatan <?php echo $penduduk['kecamatan']; ?>
+                                Kabupaten <?php echo $penduduk['kabupaten']; ?></td>
                         </tr>
                         <?php
                         if ($jenis_pengajuan['id'] == 1) {
@@ -184,7 +190,8 @@
                             <td colspan="4"></td>
                         </tr>
                         <tr>
-                            <td colspan="4">Demikian surat keterangan ini dibuat agar dapat dipergunakan sebagaimana mestinya :</td>
+                            <td colspan="4">Demikian surat keterangan ini dibuat agar dapat dipergunakan sebagaimana
+                                mestinya :</td>
                         </tr>
                     </tbody>
                 </table>
@@ -208,7 +215,8 @@
         if (!isset($_GET['proses'])) {
         ?>
             <div class="card-footer">
-                <a href="proses.php?id=<?php echo $row['id']; ?>" target="_blank" class="btn btn-primary">Proses & Download Dokumen</a>
+                <a href="proses.php?id=<?php echo $row['id']; ?>" target="_blank" class="btn btn-primary">Proses & Download
+                    Dokumen</a>
             </div>
         <?php
         }

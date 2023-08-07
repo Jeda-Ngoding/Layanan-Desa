@@ -10,11 +10,11 @@ $result_agama = $db->sql;
 $db->select("status_perkawinan", "*");
 $result_status_perkawinan = $db->sql;
 
-$db->select("provincies", "*");
+$db->select("provinces", "*");
 $result_provincies = $db->sql;
 
-// $db->select("regencies", "*");
-// $result_regencies = $db->sql;
+$db->select("regencies", "*");
+$result_regencies = $db->sql;
 
 // $db->select("districts", "*");
 // $result_districts = $db->sql;
@@ -34,8 +34,7 @@ $result_provincies = $db->sql;
                         Tambah Data Penduduk
                     </div>
                     <div class="col-6 text-end">
-                        <a href="/layanan_desa/admin/penduduk" class="btn btn-warning btn-sm"><i
-                                class="fas fa-arrow-left me-1"></i> Kembali</a>
+                        <a href="/layanan_desa/admin/penduduk" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left me-1"></i> Kembali</a>
                     </div>
                 </div>
             </div>

@@ -1,14 +1,14 @@
-<?php 
+<?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
- 
+
 session_start();
- 
+
 if (!isset($_SESSION['username'])) {
     header("location:/layanan_desa/login.php");
 }
- 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,12 +59,12 @@ if (!isset($_SESSION['username'])) {
                             Penduduk
                         </a>
                         <a class="nav-link" href="/layanan_desa/admin/jenis_pengajuan">
-                            <div class="sb-nav-link-icon"><i class="fas fa-address-book"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-th"></i></div>
                             Jenis Pengajuan
                         </a>
                         <a class="nav-link" href="/layanan_desa/admin/surat_pengajuan">
-                            <div class="sb-nav-link-icon"><i class="fas fa-address-book"></i></div>
-                            Surat Pengajuan
+                            <div class="sb-nav-link-icon"><i class="fas fa-message"></i></div>
+                            Surat Masuk
                         </a>
                         <a class="nav-link" href="/layanan_desa/admin/akun">
                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>

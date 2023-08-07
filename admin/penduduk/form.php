@@ -71,7 +71,7 @@
                     <label for="register-form-name">Agama:</label>
                     <select class="form-select" name="agama" required>
                         <?php while ($row_agama = mysqli_fetch_assoc($result_agama)) { ?>
-                            <option <?php if (isset($row) && $row['agama'] == $row_agama['nama']) {
+                        <option <?php if (isset($row) && $row['agama'] == $row_agama['nama']) {
                                         echo "selected";
                                     } ?> value="<?php if (isset($row)) {
                                                     echo $row['agama'];
@@ -87,7 +87,7 @@
                     <label for="register-form-name">Status Perkawinan:</label>
                     <select class="form-select" name="status_perkawinan" required>
                         <?php while ($row_status_perkawinan = mysqli_fetch_assoc($result_status_perkawinan)) { ?>
-                            <option <?php if (isset($row) && $row['status_perkawinan'] == $row_status_perkawinan['nama']) {
+                        <option <?php if (isset($row) && $row['status_perkawinan'] == $row_status_perkawinan['nama']) {
                                         echo "selected";
                                     } ?> value="<?php if (isset($row)) {
                                                     echo $row['status_perkawinan'];
@@ -153,8 +153,8 @@
                 <div class="form-group mb-2">
                     <label for="register-form-name">Provinsi:</label>
                     <select class="form-select" name="provinsi" required>
-                        <?php while ($row_provincies = mysqli_fetch_assoc($result_provincied)) { ?>
-                            <option <?php if (isset($row) && $row['provinsi'] == $row_provincies['name']) {
+                        <?php while ($row_provincies = mysqli_fetch_assoc($result_provincies)) { ?>
+                        <option <?php if (isset($row) && $row['provinsi'] == $row_provincies['name']) {
                                         echo "selected";
                                     } ?> value="<?php if (isset($row)) {
                                                     echo $row['provinsi'];
@@ -168,9 +168,17 @@
             <div class="col-md-6">
                 <div class="form-group mb-2">
                     <label for="register-form-name">Kabupaten/Kota:</label>
-                    <input type="text" name="kabupaten" value="<?php if (isset($row)) {
-                                                                    echo $row['kabupaten'];
-                                                                } ?>" class="form-control" required>
+                    <select class="form-select" name="kabupaten" required>
+                        <?php while ($row_regencies = mysqli_fetch_assoc($result_regencies)) { ?>
+                        <option <?php if (isset($row) && $row['kabupaten'] == $row_regencies['name']) {
+                                        echo "selected";
+                                    } ?> value="<?php if (isset($row)) {
+                                                    echo $row['kabupaten'];
+                                                } ?>"><?php if (isset($row_regencies)) {
+                                                            echo $row_regencies['name'];
+                                                        } ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
             </div>
         </div>

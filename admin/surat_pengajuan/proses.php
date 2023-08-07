@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../../config/Database.php';
 
 $id = $_GET['id'];
@@ -13,10 +14,11 @@ $idJenisPengajuan = $jenis_pengajuan['id'];
 
 // update data pengajuan
 $updated_at = date("Y-m-d h:i:s");
-$db->update('surat_pengajuan',[
-    'status'=>'proses',
-    'updated_at'=>$updated_at
-],"id=$id");
+$db->update('surat_pengajuan', [
+    'status' => 'proses',
+    'id_akun' => $_SESSION["user_id"],
+    'updated_at' => $updated_at
+], "id=$id");
 
 ?>
 <!DOCTYPE html>
@@ -69,7 +71,8 @@ $db->update('surat_pengajuan',[
                         </div>
                     </td>
                     <td colspan="2" class="text-center">
-                        <h5>PEMERINTAH&nbsp;&nbsp;KABUPATEN&nbsp;&nbsp;MADIUN <br> KECAMATAN&nbsp;&nbsp;WUNGU <br> DESA&nbsp;&nbsp;NGLANDUK</h5>
+                        <h5>PEMERINTAH&nbsp;&nbsp;KABUPATEN&nbsp;&nbsp;MADIUN <br> KECAMATAN&nbsp;&nbsp;WUNGU <br>
+                            DESA&nbsp;&nbsp;NGLANDUK</h5>
                         <span>Jalan Tanjung Anom Nomer 14 Kode Pos 63181</span>
                     </td>
                 </tr>
@@ -123,13 +126,15 @@ $db->update('surat_pengajuan',[
                     <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;</td>
                     <td>Jenis Kelamin</td>
                     <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-                    <td><?php echo $penduduk['jenis_kelamin']; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gol.Darah : <?php echo $penduduk['golongan_darah']; ?></td>
+                    <td><?php echo $penduduk['jenis_kelamin']; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gol.Darah :
+                        <?php echo $penduduk['golongan_darah']; ?></td>
                 </tr>
                 <tr>
                     <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;&nbsp;</td>
                     <td>Tempat, Tanggal Lahir</td>
                     <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-                    <td><?php echo $penduduk['tempat_lahir'] . "," . date('d-m-Y', strtotime($penduduk['tanggal_lahir'])); ?></td>
+                    <td><?php echo $penduduk['tempat_lahir'] . "," . date('d-m-Y', strtotime($penduduk['tanggal_lahir'])); ?>
+                    </td>
                 </tr>
                 <tr>
                     <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d&nbsp;&nbsp;&nbsp;</td>
@@ -166,7 +171,9 @@ $db->update('surat_pengajuan',[
                     <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;</td>
                     <td>Alamat</td>
                     <td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-                    <td><?php echo $penduduk['alamat']; ?> RT/RW <?php echo $penduduk['rt'] . "/" . $penduduk['rw']; ?> Desa <?php echo $penduduk['kelurahan']; ?> Kecamatan <?php echo $penduduk['kecamatan']; ?> Kabupaten <?php echo $penduduk['kabupaten']; ?></td>
+                    <td><?php echo $penduduk['alamat']; ?> RT/RW <?php echo $penduduk['rt'] . "/" . $penduduk['rw']; ?>
+                        Desa <?php echo $penduduk['kelurahan']; ?> Kecamatan <?php echo $penduduk['kecamatan']; ?>
+                        Kabupaten <?php echo $penduduk['kabupaten']; ?></td>
                 </tr>
                 <?php
                 if ($jenis_pengajuan['id'] == 1) {
@@ -185,7 +192,8 @@ $db->update('surat_pengajuan',[
                     <td colspan="4"></td>
                 </tr>
                 <tr>
-                    <td colspan="4">Demikian surat keterangan ini dibuat agar dapat dipergunakan sebagaimana mestinya :</td>
+                    <td colspan="4">Demikian surat keterangan ini dibuat agar dapat dipergunakan sebagaimana mestinya :
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -206,7 +214,8 @@ $db->update('surat_pengajuan',[
 
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    </script>
     <script src="/layanan_desa/assets/js/scripts.js"></script>
 </body>
 
